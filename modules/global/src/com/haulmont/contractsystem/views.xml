@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.haulmont.contractsystem.entity.Contract"
+          extends="_local"
+          name="contract-with-deps-view">
+        <property name="documents"
+                  view="_minimal">
+            <property name="contentType"/>
+            <property name="contentLength"/>
+        </property>
+        <property name="contractor"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.contractsystem.entity.Contract"
+          extends="_local"
+          name="contract-with-contractor-view">
+        <property name="contractor"
+                  view="_minimal"/>
+    </view>
+</views>

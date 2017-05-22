@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.haulmont.contractsystem.web.contract.ContractEdit"
+        datasource="contractDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.haulmont.contractsystem.web.contract">
+    <dsContext>
+        <datasource id="contractDs"
+                    class="com.haulmont.contractsystem.entity.Contract"
+                    view="contract-with-deps-view">
+            <collectionDatasource id="documentsDs"
+                                  property="documents"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="contractDs">
+            <column width="250px">
+                <field property="name"/>
+                <field property="contractor"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="documentsBox"
+                  caption="msg://com.haulmont.contractsystem.entity/Contract.documents">
+            <table id="documentsTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="remove"/>
+                    <action id="open"
+                            caption="msg://open"
+                            invoke="onOpen"/>
+                </actions>
+                <columns>
+                    <column id="name"/>
+                    <column id="extension"/>
+                    <column id="createDate"/>
+                    <column id="contentLength"/>
+                </columns>
+                <rows datasource="documentsDs"/>
+                <buttonsPanel>
+                    <multiUpload id="multiUploadField"
+                                 caption="msg://add"
+                                 icon="icons/add.png"/>
+                    <button action="documentsTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
