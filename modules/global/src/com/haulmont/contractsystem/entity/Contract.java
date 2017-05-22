@@ -13,6 +13,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+import java.util.Set;
 
 @Table(name = "CONTRACTSYSTEM_CONTRACT")
 @Entity(name = "contractsystem$Contract")
@@ -33,6 +34,16 @@ public class Contract extends StandardEntity {
     @JoinColumn(name = "CONTRACTOR_ID")
     protected Contractor contractor;
 
+    public List<WebdavFileDescriptor> getDocuments() {
+        return documents;
+    }
+
+    public void setDocuments(List<WebdavFileDescriptor> documents) {
+        this.documents = documents;
+    }
+
+
+
     public void setContractor(Contractor contractor) {
         this.contractor = contractor;
     }
@@ -41,14 +52,6 @@ public class Contract extends StandardEntity {
         return contractor;
     }
 
-
-    public void setDocuments(List<WebdavFileDescriptor> documents) {
-        this.documents = documents;
-    }
-
-    public List<WebdavFileDescriptor> getDocuments() {
-        return documents;
-    }
 
 
     public void setName(String name) {

@@ -8,10 +8,14 @@
     <dsContext>
         <datasource id="contractDs"
                     class="com.haulmont.contractsystem.entity.Contract"
-                    view="contract-with-deps-view">
-            <collectionDatasource id="documentsDs"
-                                  property="documents"/>
-        </datasource>
+                    view="contract-with-deps-view"/>
+        <collectionDatasource id="documentsDs"
+                              class="com.haulmont.webdav.entity.WebdavFileDescriptor"
+                              view="_local">
+            <query>
+                <![CDATA[select fd from contractsystem$Contract e join e.documents fd where e.id = :ds$contractDs.id]]>
+            </query>
+        </collectionDatasource>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
@@ -28,6 +32,7 @@
                   caption="msg://com.haulmont.contractsystem.entity/Contract.documents">
             <table id="documentsTable"
                    height="200px"
+                   multiselect="true"
                    width="100%">
                 <actions>
                     <action id="remove"/>

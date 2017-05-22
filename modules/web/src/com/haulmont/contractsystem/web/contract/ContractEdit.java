@@ -1,17 +1,17 @@
 package com.haulmont.contractsystem.web.contract;
 
+import com.haulmont.contractsystem.entity.Contract;
 import com.haulmont.cuba.core.entity.FileDescriptor;
 import com.haulmont.cuba.core.global.AppBeans;
 import com.haulmont.cuba.core.global.Configuration;
 import com.haulmont.cuba.core.global.FileStorageException;
 import com.haulmont.cuba.core.global.Metadata;
-import com.haulmont.cuba.gui.components.AbstractAction;
 import com.haulmont.cuba.gui.components.AbstractEditor;
-import com.haulmont.contractsystem.entity.Contract;
 import com.haulmont.cuba.gui.components.Component;
 import com.haulmont.cuba.gui.components.FileMultiUploadField;
 import com.haulmont.cuba.gui.components.Table;
 import com.haulmont.cuba.gui.data.CollectionDatasource;
+import com.haulmont.cuba.gui.data.impl.DatasourceImplementation;
 import com.haulmont.cuba.gui.export.ExportDisplay;
 import com.haulmont.cuba.gui.upload.FileUploadingAPI;
 import com.haulmont.webdav.config.WebdavConfig;
@@ -25,7 +25,6 @@ import com.vaadin.server.Page;
 import javax.inject.Inject;
 import java.io.File;
 import java.net.URI;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
@@ -49,12 +48,13 @@ public class ContractEdit extends AbstractEditor<Contract> {
     protected Configuration configuration;
 
     @Inject
+    protected DatasourceImplementation<Contract> contractDs;
+
+    @Inject
     protected CollectionDatasource<WebdavFileDescriptor, UUID> documentsDs;
 
     @Inject
     protected Table<WebdavFileDescriptor> documentsTable;
-
-    protected Map<WebdavFileDescriptor, UUID> tempDirectoryFileUUIDs = new HashMap<>();
 
     @Override
     public void init(Map<String, Object> params) {
@@ -68,6 +68,8 @@ public class ContractEdit extends AbstractEditor<Contract> {
     }
 
     protected void multiUploadCompleteListener() {
+        Contract contract = contractDs.getItem();
+
         for (Map.Entry<UUID, String> upload : multiUploadField.getUploadsMap().entrySet()) {
             FileDescriptor fDesc = fileUploadingAPI.getFileDescriptor(upload.getKey(), upload.getValue());
 
@@ -76,10 +78,16 @@ public class ContractEdit extends AbstractEditor<Contract> {
 
             WebdavFileDescriptor webdavFileDescriptor = createWebdavFileDescriptorByFileDescriptor(fDesc, fileUploadingAPI.getFile(upload.getKey()));
             documentsDs.addItem(webdavFileDescriptor);
+            contract.getDocuments().add(webdavFileDescriptor);
 
-            // for saving files when form will commit
-            tempDirectoryFileUUIDs.put(webdavFileDescriptor, upload.getKey());
+            try {
+                fileUploadingAPI.putFileIntoStorage(upload.getKey(), webdavFileDescriptor);
+            } catch (FileStorageException e) {
+                throw new RuntimeException("Unable to put files into storage", e);
+            }
         }
+        documentsDs.commit();
+        contractDs.modified(contract); // because when collection of WebdavFileDescriptor is modified, contractDs hasn't state as changed
         multiUploadField.clearUploads();
     }
 
@@ -96,31 +104,7 @@ public class ContractEdit extends AbstractEditor<Contract> {
         return webdavFileDescriptor;
     }
 
-    @Override
-    protected boolean preCommit() {
-        if (!getDsContext().isModified()) return true;
-
-        // Relocate the file from temporary storage to permanent
-        for (WebdavFileDescriptor webdavFileDescriptor : documentsDs.getItems()) {
-            putFileIntoStorage(webdavFileDescriptor);
-        }
-
-        return true;
-    }
-
-    /**
-     * Just translate execution to {@link FileUploadingAPI#putFileIntoStorage(UUID, FileDescriptor)}
-     *
-     * @param fileDescriptor is putted to Middleware
-     */
-    protected void putFileIntoStorage(WebdavFileDescriptor fileDescriptor) {
-        try {
-            fileUploadingAPI.putFileIntoStorage(tempDirectoryFileUUIDs.get(fileDescriptor), fileDescriptor);
-        } catch (FileStorageException e) {
-            throw new RuntimeException("Unable to put files into storage", e);
-        }
-    }
-
+    @SuppressWarnings("unused")
     public void onOpen(Component source) {
         WebdavFileDescriptor selected = documentsTable.getSingleSelected();
 
