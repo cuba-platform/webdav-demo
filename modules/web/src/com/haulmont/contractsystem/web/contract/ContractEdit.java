@@ -25,6 +25,8 @@ import com.vaadin.server.Page;
 import javax.inject.Inject;
 import java.io.File;
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -69,6 +71,13 @@ public class ContractEdit extends AbstractEditor<Contract> {
 
     protected void multiUploadCompleteListener() {
         Contract contract = contractDs.getItem();
+        List<WebdavFileDescriptor> contractDocuments = contract.getDocuments();
+
+        // Initialize documents if they are not presented
+        if (contractDocuments == null) {
+            contractDocuments = new ArrayList<>();
+            contract.setDocuments(contractDocuments);
+        }
 
         for (Map.Entry<UUID, String> upload : multiUploadField.getUploadsMap().entrySet()) {
             FileDescriptor fDesc = fileUploadingAPI.getFileDescriptor(upload.getKey(), upload.getValue());
@@ -78,7 +87,7 @@ public class ContractEdit extends AbstractEditor<Contract> {
 
             WebdavFileDescriptor webdavFileDescriptor = createWebdavFileDescriptorByFileDescriptor(fDesc, fileUploadingAPI.getFile(upload.getKey()));
             documentsDs.addItem(webdavFileDescriptor);
-            contract.getDocuments().add(webdavFileDescriptor);
+            contractDocuments.add(webdavFileDescriptor);
 
             try {
                 fileUploadingAPI.putFileIntoStorage(upload.getKey(), webdavFileDescriptor);
