@@ -8,7 +8,7 @@
     <dsContext>
         <datasource id="contractorDs"
                     class="com.haulmont.contractsystem.entity.Contractor"
-                    view="_local"/>
+                    view="contractor-view"/>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
@@ -19,6 +19,7 @@
             <column width="250px">
                 <field property="name"/>
                 <field property="email"/>
+                <field property="contract"/>
             </column>
         </fieldGroup>
         <frame id="windowActions"

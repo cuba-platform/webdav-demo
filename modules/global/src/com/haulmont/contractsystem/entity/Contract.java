@@ -14,6 +14,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import java.util.Set;
+import javax.persistence.OneToOne;
 
 @Table(name = "CONTRACTSYSTEM_CONTRACT")
 @Entity(name = "contractsystem$Contract")
@@ -30,7 +31,7 @@ public class Contract extends StandardEntity {
     @ManyToMany
     protected List<WebdavFileDescriptor> documents;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CONTRACTOR_ID")
     protected Contractor contractor;
 

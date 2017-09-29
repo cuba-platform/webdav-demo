@@ -17,4 +17,10 @@
         <property name="contractor"
                   view="_minimal"/>
     </view>
+    <view class="com.haulmont.contractsystem.entity.Contractor"
+          extends="_local"
+          name="contractor-view">
+        <property name="contract"
+                  view="_minimal"/>
+    </view>
 </views>
