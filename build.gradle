@@ -1,6 +1,6 @@
 
 buildscript {
-    ext.cubaVersion = '6.6.3'
+    ext.cubaVersion = '6.6.4'
     repositories {
         mavenLocal()
         maven {
@@ -45,7 +45,7 @@ cuba {
 }
 
 dependencies {
-    appComponent("com.haulmont.webdav:webdav-global:1.0-SNAPSHOT")
+    appComponent("com.haulmont.webdav:webdav-global:2.0-SNAPSHOT")
 
 }
 

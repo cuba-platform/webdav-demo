@@ -10,10 +10,9 @@
                     class="com.haulmont.contractsystem.entity.Contract"
                     view="contract-with-deps-view"/>
         <collectionDatasource id="documentsDs"
-                              class="com.haulmont.webdav.entity.WebdavFileDescriptor"
-                              view="_local">
+                              class="com.haulmont.cuba.core.entity.FileDescriptor">
             <query>
-                <![CDATA[select fd from contractsystem$Contract e join e.documents fd where e.id = :ds$contractDs.id]]>
+                <![CDATA[select e from sys$FileDescriptor e]]>
             </query>
         </collectionDatasource>
     </dsContext>

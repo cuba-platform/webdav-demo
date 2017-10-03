@@ -32,17 +32,15 @@ create table CONTRACTSYSTEM_CONTRACTOR (
     primary key (ID)
 )^
 -- end CONTRACTSYSTEM_CONTRACTOR
--- begin CONTRACTSYSTEM_CONTRACT_WEBDAV_FILE_DESCRIPTOR_LINK
-create table CONTRACTSYSTEM_CONTRACT_WEBDAV_FILE_DESCRIPTOR_LINK (
-    CONTRACT_ID varchar(36) not null,
-    WEBDAV_FILE_DESCRIPTOR_ID varchar(36) not null,
-    primary key (CONTRACT_ID, WEBDAV_FILE_DESCRIPTOR_ID)
-)^
--- end CONTRACTSYSTEM_CONTRACT_WEBDAV_FILE_DESCRIPTOR_LINK
+
 -- begin SEC_USER
-alter table SEC_USER add column WEBDAV_PASSWORD varchar(255) ^
-update SEC_USER set WEBDAV_PASSWORD = '' where WEBDAV_PASSWORD is null ^
-alter table SEC_USER alter column WEBDAV_PASSWORD set not null ^
 alter table SEC_USER add column DTYPE varchar(100) ^
 update SEC_USER set DTYPE = 'contractsystem$ContractUser' where DTYPE is null ^
 -- end SEC_USER
+-- begin CONTRACTSYSTEM_CONTRACT_FILE_DESCRIPTOR_LINK
+create table CONTRACTSYSTEM_CONTRACT_FILE_DESCRIPTOR_LINK (
+    CONTRACT_ID varchar(36) not null,
+    FILE_DESCRIPTOR_ID varchar(36) not null,
+    primary key (CONTRACT_ID, FILE_DESCRIPTOR_ID)
+)^
+-- end CONTRACTSYSTEM_CONTRACT_FILE_DESCRIPTOR_LINK

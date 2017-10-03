@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         caption="msg://browseCaption"
-        class="com.haulmont.contractsystem.web.contract.ContractBrowse"
-        focusComponent="contractsTable"
-        lookupComponent="contractsTable"
-        messagesPack="com.haulmont.contractsystem.web.contract">
+        class="com.haulmont.contractsystem.web.webdavdocument.WebdavDocumentBrowse"
+        focusComponent="webdavDocumentsTable"
+        lookupComponent="webdavDocumentsTable"
+        messagesPack="com.haulmont.contractsystem.web.webdavdocument">
     <dsContext>
-        <groupDatasource id="contractsDs"
-                         class="com.haulmont.contractsystem.entity.Contract"
+        <groupDatasource id="webdavDocumentsDs"
+                         class="com.haulmont.webdav.entity.WebdavDocument"
                          view="_local">
             <query>
-                <![CDATA[select e from contractsystem$Contract e]]>
+                <![CDATA[select e from webdav$WebdavDocument e]]>
             </query>
         </groupDatasource>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="contractsTable"
+    <layout expand="webdavDocumentsTable"
             spacing="true">
         <filter id="filter"
-                applyTo="contractsTable"
-                datasource="contractsDs">
+                applyTo="webdavDocumentsTable"
+                datasource="webdavDocumentsDs">
             <properties include=".*"/>
         </filter>
-        <groupTable id="contractsTable"
+        <groupTable id="webdavDocumentsTable"
                     width="100%">
             <actions>
                 <action id="create"/>
@@ -31,18 +31,19 @@
                 <action id="remove"/>
             </actions>
             <columns>
-                <column id="name"/>
+                <column id="id"/>
+                <column id="versioning"/>
             </columns>
-            <rows datasource="contractsDs"/>
+            <rows datasource="webdavDocumentsDs"/>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
                 <button id="createBtn"
-                        action="contractsTable.create"/>
+                        action="webdavDocumentsTable.create"/>
                 <button id="editBtn"
-                        action="contractsTable.edit"/>
+                        action="webdavDocumentsTable.edit"/>
                 <button id="removeBtn"
-                        action="contractsTable.remove"/>
+                        action="webdavDocumentsTable.remove"/>
             </buttonsPanel>
         </groupTable>
     </layout>
