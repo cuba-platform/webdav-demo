@@ -25,15 +25,17 @@ public class Contractor extends StandardEntity {
     protected String email;
 
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "contractor")
-    protected Contract contract;
 
-    public void setContract(Contract contract) {
-        this.contract = contract;
+
+    @OneToMany(mappedBy = "contractor")
+    protected List<Contract> contracts;
+
+    public void setContracts(List<Contract> contracts) {
+        this.contracts = contracts;
     }
 
-    public Contract getContract() {
-        return contract;
+    public List<Contract> getContracts() {
+        return contracts;
     }
 
 

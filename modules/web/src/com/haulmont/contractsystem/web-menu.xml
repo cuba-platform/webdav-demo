@@ -3,9 +3,12 @@
     <menu id="application-contractsystem"
           insertBefore="administration">
         <item screen="contractsystem$Contractor.browse"/>
+        <item screen="contractsystem$Contract.browse"/>
+    </menu>
+    <menu id="application-contractsystem-system"
+          insertBefore="administration">
         <item screen="webdav$WebdavDocument.browse"/>
         <item screen="webdav$WebdavDocumentVersion.browse"/>
         <item screen="webdav$WebdavLockDescriptor.browse"/>
-        <item screen="contractsystem$Contract.browse"/>
     </menu>
 </menu-config>

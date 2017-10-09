@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
     <include file="com/haulmont/contractsystem/screens.xml"/>
-    <screen id="contractsystem$Contract.edit"
-            template="com/haulmont/contractsystem/web/contract/contract-edit.xml"/>
     <screen id="contractsystem$Contractor.browse"
             template="com/haulmont/contractsystem/web/contractor/contractor-browse.xml"/>
-    <screen id="contractsystem$Contractor.edit"
-            template="com/haulmont/contractsystem/web/contractor/contractor-edit.xml"/>
     <screen id="webdav$WebdavDocument.browse"
             template="com/haulmont/contractsystem/web/webdavdocument/webdav-document-browse.xml"/>
     <screen id="webdav$WebdavDocument.edit"
             template="com/haulmont/contractsystem/web/webdavdocument/webdav-document-edit.xml"/>
     <screen id="webdav$WebdavDocumentVersion.browse"
             template="com/haulmont/contractsystem/web/webdavdocumentversion/webdav-document-version-browse.xml"/>
-    <screen id="webdav$WebdavDocumentVersion.edit"
-            template="com/haulmont/contractsystem/web/webdavdocumentversion/webdav-document-version-edit.xml"/>
     <screen id="webdav$WebdavLockDescriptor.browse"
             template="com/haulmont/contractsystem/web/webdavlockdescriptor/webdav-lock-descriptor-browse.xml"/>
     <screen id="webdav$WebdavLockDescriptor.edit"
             template="com/haulmont/contractsystem/web/webdavlockdescriptor/webdav-lock-descriptor-edit.xml"/>
     <screen id="contractsystem$Contract.browse"
             template="com/haulmont/contractsystem/web/contract/contract-browse.xml"/>
+    <screen id="webdav$WebdavDocumentVersion.edit"
+            template="com/haulmont/contractsystem/web/webdavdocumentversion/webdav-document-version-edit.xml"/>
+    <screen id="contractsystem$Contract.edit"
+            template="com/haulmont/contractsystem/web/contract/contract-edit.xml"/>
+    <screen id="contractsystem$Contractor.edit"
+            template="com/haulmont/contractsystem/web/contractor/contractor-edit.xml"/>
+    <screen id="webdav$WebdavDocumentVersionDialog.browse"
+            template="com/haulmont/contractsystem/web/webdavdocumentversion/webdav-document-version-dialog-browse.xml"/>
 </screen-config>

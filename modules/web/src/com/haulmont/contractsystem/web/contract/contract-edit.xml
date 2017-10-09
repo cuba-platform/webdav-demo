@@ -9,12 +9,6 @@
         <datasource id="contractDs"
                     class="com.haulmont.contractsystem.entity.Contract"
                     view="contract-with-deps-view"/>
-        <collectionDatasource id="documentsDs"
-                              class="com.haulmont.cuba.core.entity.FileDescriptor">
-            <query>
-                <![CDATA[select e from sys$FileDescriptor e]]>
-            </query>
-        </collectionDatasource>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
@@ -25,35 +19,9 @@
             <column width="250px">
                 <field property="name"/>
                 <field property="contractor"/>
+                <field property="document"/>
             </column>
         </fieldGroup>
-        <groupBox id="documentsBox"
-                  caption="msg://com.haulmont.contractsystem.entity/Contract.documents">
-            <table id="documentsTable"
-                   height="200px"
-                   multiselect="true"
-                   width="100%">
-                <actions>
-                    <action id="remove"/>
-                    <action id="open"
-                            caption="msg://open"
-                            invoke="onOpen"/>
-                </actions>
-                <columns>
-                    <column id="name"/>
-                    <column id="extension"/>
-                    <column id="createDate"/>
-                    <column id="contentLength"/>
-                </columns>
-                <rows datasource="documentsDs"/>
-                <buttonsPanel>
-                    <multiUpload id="multiUploadField"
-                                 caption="msg://add"
-                                 icon="icons/add.png"/>
-                    <button action="documentsTable.remove"/>
-                </buttonsPanel>
-            </table>
-        </groupBox>
         <frame id="windowActions"
                screen="editWindowActions"/>
     </layout>

@@ -3,23 +3,26 @@
     <view class="com.haulmont.contractsystem.entity.Contract"
           extends="_local"
           name="contract-with-deps-view">
-        <property name="documents"
-                  view="_minimal">
-        </property>
+        <property name="document"
+                  view="_minimal"/>
         <property name="contractor"
                   view="_minimal"/>
     </view>
     <view class="com.haulmont.contractsystem.entity.Contract"
           extends="_local"
           name="contract-with-contractor-view">
-        <property name="contractor"
-                  view="_minimal"/>
     </view>
     <view class="com.haulmont.contractsystem.entity.Contractor"
           extends="_local"
           name="contractor-view">
-        <property name="contract"
-                  view="_minimal"/>
+        <property name="contracts"
+                  view="_minimal">
+            <property name="name"/>
+            <property name="document"
+                      view="_minimal"/>
+            <property name="contractor"
+                      view="_minimal"/>
+        </property>
     </view>
     <view class="com.haulmont.webdav.entity.WebdavDocument"
           extends="_local"
@@ -33,7 +36,6 @@
             <property name="webdavDocument"
                       view="_minimal"/>
             <property name="contentType"/>
-            <property name="contentLength"/>
             <property name="sha1sum"/>
             <property name="naturalVersionIdentifier"/>
         </property>

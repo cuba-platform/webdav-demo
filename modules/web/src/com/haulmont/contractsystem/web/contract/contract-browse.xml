@@ -8,7 +8,7 @@
     <dsContext>
         <groupDatasource id="contractsDs"
                          class="com.haulmont.contractsystem.entity.Contract"
-                         view="_local">
+                         view="contract-with-deps-view">
             <query>
                 <![CDATA[select e from contractsystem$Contract e]]>
             </query>
@@ -29,9 +29,16 @@
                 <action id="create"/>
                 <action id="edit"/>
                 <action id="remove"/>
+                <action id="refresh"/>
             </actions>
             <columns>
                 <column id="name"/>
+                <column id="link"
+                        caption="msg://link"
+                        generator="generateLinkCell"/>
+                <column id="latestVersion"
+                        caption="msg://latestVersion"
+                        generator="generateLatestVersionCell"/>
             </columns>
             <rows datasource="contractsDs"/>
             <rowsCount/>
@@ -43,6 +50,8 @@
                         action="contractsTable.edit"/>
                 <button id="removeBtn"
                         action="contractsTable.remove"/>
+                <button id="refreshBtn"
+                        action="contractsTable.refresh"/>
             </buttonsPanel>
         </groupTable>
     </layout>

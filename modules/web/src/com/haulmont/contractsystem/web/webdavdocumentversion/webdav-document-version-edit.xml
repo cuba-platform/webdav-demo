@@ -20,7 +20,6 @@
                 <field property="fileDescriptor"/>
                 <field property="webdavDocument"/>
                 <field property="contentType"/>
-                <field property="contentLength"/>
                 <field property="sha1sum"/>
                 <field property="naturalVersionIdentifier"/>
             </column>

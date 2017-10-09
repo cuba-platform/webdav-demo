@@ -11,6 +11,7 @@ create table CONTRACTSYSTEM_CONTRACT (
     --
     NAME varchar(255) not null,
     CONTRACTOR_ID varchar(36),
+    DOCUMENT_ID varchar(36) not null,
     --
     primary key (ID)
 )^
@@ -37,10 +38,3 @@ create table CONTRACTSYSTEM_CONTRACTOR (
 alter table SEC_USER add column DTYPE varchar(100) ^
 update SEC_USER set DTYPE = 'contractsystem$ContractUser' where DTYPE is null ^
 -- end SEC_USER
--- begin CONTRACTSYSTEM_CONTRACT_FILE_DESCRIPTOR_LINK
-create table CONTRACTSYSTEM_CONTRACT_FILE_DESCRIPTOR_LINK (
-    CONTRACT_ID varchar(36) not null,
-    FILE_DESCRIPTOR_ID varchar(36) not null,
-    primary key (CONTRACT_ID, FILE_DESCRIPTOR_ID)
-)^
--- end CONTRACTSYSTEM_CONTRACT_FILE_DESCRIPTOR_LINK

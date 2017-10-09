@@ -14,6 +14,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.util.List;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+import com.haulmont.cuba.core.entity.annotation.Listeners;
 
 @Table(name = "CONTRACTSYSTEM_CONTRACT")
 @Entity(name = "contractsystem$Contract")
@@ -23,25 +26,17 @@ public class Contract extends StandardEntity {
     @Column(name = "NAME", nullable = false)
     protected String name;
 
-    @OneToOne(fetch = FetchType.LAZY)
+
+    @NotNull
+    @OnDelete(DeletePolicy.CASCADE)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "DOCUMENT_ID")
+    protected FileDescriptor document;
+
+    @OnDelete(DeletePolicy.CASCADE)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CONTRACTOR_ID")
     protected Contractor contractor;
-
-
-    @JoinTable(name = "CONTRACTSYSTEM_CONTRACT_FILE_DESCRIPTOR_LINK",
-        joinColumns = @JoinColumn(name = "CONTRACT_ID"),
-        inverseJoinColumns = @JoinColumn(name = "FILE_DESCRIPTOR_ID"))
-    @OnDelete(DeletePolicy.CASCADE)
-    @ManyToMany
-    protected List<FileDescriptor> documents;
-
-    public List<FileDescriptor> getDocuments() {
-        return documents;
-    }
-
-    public void setDocuments(List<FileDescriptor> documents) {
-        this.documents = documents;
-    }
 
     public void setContractor(Contractor contractor) {
         this.contractor = contractor;
@@ -50,6 +45,16 @@ public class Contract extends StandardEntity {
     public Contractor getContractor() {
         return contractor;
     }
+
+
+    public void setDocument(FileDescriptor document) {
+        this.document = document;
+    }
+
+    public FileDescriptor getDocument() {
+        return document;
+    }
+
 
 
 
