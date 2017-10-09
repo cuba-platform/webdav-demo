@@ -39,7 +39,7 @@ public class WebdavDocumentVersionDialogBrowse extends AbstractLookup {
         Button downloadBtn = withButton(Button.class, "Download", this::downloadInvoke);
 
 //        String webdavOpenCaptionBtn = String.format("open (v%d)", latestVersion.getNaturalVersionIdentifier());
-        Button webdavOpenBtn = withButton(Button.class, "Open", this::webdavOpenInvoke);
+        Button webdavOpenBtn = withButton(Button.class, "Open read-only", this::webdavOpenInvoke);
 
         HBoxLayout hBox = componentsFactory.createComponent(HBoxLayout.class);
         hBox.add(downloadBtn);

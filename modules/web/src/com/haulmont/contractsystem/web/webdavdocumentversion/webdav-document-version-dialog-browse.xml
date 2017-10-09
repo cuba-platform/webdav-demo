@@ -21,6 +21,8 @@
                     height="100%"
                     width="100%">
             <columns>
+                <column id="naturalVersionIdentifier"
+                        caption="msg://version"/>
                 <column id="fileDescriptor.name"/>
                 <column id="webdavDocument"
                         collapsed="true"/>
@@ -28,7 +30,10 @@
                         collapsed="true"/>
                 <column id="sha1sum"
                         collapsed="true"/>
-                <column id="naturalVersionIdentifier"/>
+                <column id="createTs"
+                        caption="msg://createTs"/>
+                <column id="createdBy"
+                        caption="msg://author"/>
                 <column id="link"
                         caption="msg://link"
                         generator="generateLinkCell"/>

@@ -48,7 +48,8 @@
     </view>
     <view class="com.haulmont.webdav.entity.WebdavDocumentVersion"
           extends="_local"
-          name="webdavDocumentVersion-with-deps-view">
+          name="webdavDocumentVersion-with-deps-view"
+          systemProperties="true">
         <property name="fileDescriptor"
                   view="_minimal"/>
         <property name="webdavDocument"

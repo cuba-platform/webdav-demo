@@ -33,12 +33,12 @@
             </actions>
             <columns>
                 <column id="name"/>
-                <column id="link"
-                        caption="msg://link"
-                        generator="generateLinkCell"/>
                 <column id="latestVersion"
                         caption="msg://latestVersion"
                         generator="generateLatestVersionCell"/>
+                <column id="link"
+                        caption="msg://link"
+                        generator="generateLinkCell"/>
             </columns>
             <rows datasource="contractsDs"/>
             <rowsCount/>
