@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        xmlns:webdav="http://schemas.company.com/agd/0.1/ui-component.xsd"
         caption="msg://editorCaption"
         class="com.haulmont.contractsystem.web.contract.ContractEdit"
         datasource="contractDs"

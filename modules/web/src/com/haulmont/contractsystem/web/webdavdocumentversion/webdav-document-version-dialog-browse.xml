@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        xmlns:webdav="http://schemas.haulmont.com/webdav/ui-component.xsd"
         caption="msg://browseCaption"
         class="com.haulmont.contractsystem.web.webdavdocumentversion.WebdavDocumentVersionDialogBrowse"
         focusComponent="webdavDocumentVersionsTable"
@@ -41,5 +42,6 @@
             <rows datasource="webdavDocumentVersionsDs"/>
             <rowsCount/>
         </groupTable>
+        <webdav:documentVersionLink documentVersionId="document version id"/>
     </layout>
 </window>

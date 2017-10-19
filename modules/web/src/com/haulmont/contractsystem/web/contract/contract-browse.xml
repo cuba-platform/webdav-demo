@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        xmlns:webdav="http://schemas.haulmont.com/webdav/ui-component.xsd"
         caption="msg://browseCaption"
         class="com.haulmont.contractsystem.web.contract.ContractBrowse"
         focusComponent="contractsTable"
@@ -54,5 +55,7 @@
                         action="contractsTable.refresh"/>
             </buttonsPanel>
         </groupTable>
+
+        <webdav:documentLink caption="test" documentId="test" showVersion="false" icon="icons/save.png" description="testdesc"/>
     </layout>
 </window>

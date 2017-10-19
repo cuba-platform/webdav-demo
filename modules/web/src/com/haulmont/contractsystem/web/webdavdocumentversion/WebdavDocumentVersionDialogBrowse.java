@@ -1,17 +1,11 @@
 package com.haulmont.contractsystem.web.webdavdocumentversion;
 
-import com.haulmont.contractsystem.entity.Contract;
-import com.haulmont.cuba.gui.WindowParam;
-import com.haulmont.cuba.gui.components.AbstractLookup;
-import com.haulmont.cuba.gui.components.Action;
-import com.haulmont.cuba.gui.components.Button;
-import com.haulmont.cuba.gui.components.Component;
-import com.haulmont.cuba.gui.components.HBoxLayout;
+import com.haulmont.cuba.gui.components.*;
 import com.haulmont.cuba.gui.components.actions.BaseAction;
 import com.haulmont.cuba.gui.data.GroupDatasource;
 import com.haulmont.cuba.gui.export.ExportDisplay;
 import com.haulmont.cuba.gui.xml.layout.ComponentsFactory;
-import com.haulmont.webdav.entity.WebdavDocument;
+import com.haulmont.webdav.components.DocumentVersionLink;
 import com.haulmont.webdav.entity.WebdavDocumentVersion;
 import com.haulmont.webdav.service.WebdavUrlManagementService;
 import com.vaadin.server.Page;
@@ -40,10 +34,12 @@ public class WebdavDocumentVersionDialogBrowse extends AbstractLookup {
 
 //        String webdavOpenCaptionBtn = String.format("open (v%d)", latestVersion.getNaturalVersionIdentifier());
         Button webdavOpenBtn = withButton(Button.class, "Open read-only", this::webdavOpenInvoke);
+        DocumentVersionLink versionLink = componentsFactory.createComponent(DocumentVersionLink.class);
+        versionLink.setAlignment(Alignment.BOTTOM_CENTER);
 
         HBoxLayout hBox = componentsFactory.createComponent(HBoxLayout.class);
         hBox.add(downloadBtn);
-        hBox.add(webdavOpenBtn);
+        hBox.add(versionLink);
         return hBox;
     }
 
