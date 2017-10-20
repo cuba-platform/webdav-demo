@@ -9,6 +9,7 @@ import com.haulmont.cuba.gui.data.GroupDatasource;
 import com.haulmont.cuba.gui.export.ExportDisplay;
 import com.haulmont.cuba.gui.xml.layout.ComponentsFactory;
 import com.haulmont.webdav.components.DocumentLink;
+import com.haulmont.webdav.dto.WebdavUrl;
 import com.haulmont.webdav.entity.WebdavDocument;
 import com.haulmont.webdav.entity.WebdavDocumentVersion;
 import com.haulmont.webdav.service.WebdavDocumentVersionsManagementService;
@@ -66,7 +67,7 @@ public class ContractBrowse extends AbstractLookup {
 
         //DocumentLink webdavOpenBtn = withLink(DocumentLink.class, "Open", this::webdavOpenInvoke);
         //documentLink.setDocumentId(entity.getDocument().getId().toString());
-        if (i == 0) {
+        /*if (i == 0) {
             documentLink.setCaption("customCaption");
             documentLink.setEnabled(false);
         } else if (i == 1) {
@@ -82,7 +83,7 @@ public class ContractBrowse extends AbstractLookup {
 
         if (i == contractsTable.getDatasource().size()) {
             i = 0;
-        }
+        }*/
 
         Button versionsBtnOriginal = withButton(Button.class, "Show versions", this::showVersionsInvoke);
         //DocumentLink versionsBtn = withLink(DocumentLink.class, "Show versions", this::showVersionsInvoke);
@@ -91,8 +92,8 @@ public class ContractBrowse extends AbstractLookup {
 
         HBoxLayout hBox = componentsFactory.createComponent(HBoxLayout.class);
         hBox.add(documentLink);
-        documentLink.setAlignment(Alignment.MIDDLE_CENTER);
-        hBox.add(versionsBtnOriginal);
+        //documentLink.setAlignment(Alignment.MIDDLE_CENTER);
+        //hBox.add(versionsBtnOriginal);
         //hBox.add(webdavOpenBtnW);
         //hBox.add(versionsBtn);
         return hBox;
@@ -111,9 +112,9 @@ public class ContractBrowse extends AbstractLookup {
         //showMessage(actionPerformedEvent);
         Contract trackedContract = contractsDs.getItem();
 
-        String url = urlManagementService.retrieveDocumentUrlByFileDescriptor(trackedContract.getDocument());
+        WebdavUrl url = urlManagementService.retrieveDocumentUrlByFileDescriptor(trackedContract.getDocument());
 
-        Page.getCurrent().open(url, "_top");
+        Page.getCurrent().open(url.getUrl(), "_top");
     }
 
     protected void downloadInvoke(Action.ActionPerformedEvent actionPerformedEvent) {

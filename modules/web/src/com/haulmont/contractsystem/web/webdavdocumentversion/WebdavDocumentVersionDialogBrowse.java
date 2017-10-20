@@ -6,6 +6,7 @@ import com.haulmont.cuba.gui.data.GroupDatasource;
 import com.haulmont.cuba.gui.export.ExportDisplay;
 import com.haulmont.cuba.gui.xml.layout.ComponentsFactory;
 import com.haulmont.webdav.components.DocumentVersionLink;
+import com.haulmont.webdav.dto.WebdavUrl;
 import com.haulmont.webdav.entity.WebdavDocumentVersion;
 import com.haulmont.webdav.service.WebdavUrlManagementService;
 import com.vaadin.server.Page;
@@ -46,9 +47,9 @@ public class WebdavDocumentVersionDialogBrowse extends AbstractLookup {
     protected void webdavOpenInvoke(Action.ActionPerformedEvent actionPerformedEvent) {
         WebdavDocumentVersion tracked = webdavDocumentVersionsDs.getItem();
 
-        String url = urlManagementService.retrieveConcreteVersionUrlByWebdavDocumentVersion(tracked);
+        WebdavUrl url = urlManagementService.retrieveConcreteVersionUrlByWebdavDocumentVersion(tracked);
 
-        Page.getCurrent().open(url, "_top");
+        Page.getCurrent().open(url.getUrl(), "_top");
     }
 
     protected void downloadInvoke(Action.ActionPerformedEvent actionPerformedEvent) {
