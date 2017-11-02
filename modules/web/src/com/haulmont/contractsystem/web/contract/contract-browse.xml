@@ -25,7 +25,7 @@
             <properties include=".*"/>
         </filter>
         <groupTable id="contractsTable"
-                    width="100%">
+                    width="100%" multiselect="true">
             <actions>
                 <action id="create"/>
                 <action id="edit"/>
@@ -56,6 +56,5 @@
             </buttonsPanel>
         </groupTable>
 
-        <webdav:documentLink caption="test" documentId="test" showVersion="false" icon="icons/save.png" description="testdesc"/>
     </layout>
 </window>

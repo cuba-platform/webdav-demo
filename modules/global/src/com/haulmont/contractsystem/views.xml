@@ -37,7 +37,7 @@
                       view="_minimal"/>
             <property name="contentType"/>
             <property name="sha1sum"/>
-            <property name="naturalVersionIdentifier"/>
+            <property name="naturalVersionId"/>
         </property>
         <property name="webdavLockDescriptor"
                   view="_minimal">

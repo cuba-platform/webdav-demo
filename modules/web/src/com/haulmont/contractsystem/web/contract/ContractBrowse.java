@@ -3,7 +3,13 @@ package com.haulmont.contractsystem.web.contract;
 import com.haulmont.bali.util.ParamsMap;
 import com.haulmont.contractsystem.entity.Contract;
 import com.haulmont.cuba.gui.WindowManager;
-import com.haulmont.cuba.gui.components.*;
+import com.haulmont.cuba.gui.components.AbstractLookup;
+import com.haulmont.cuba.gui.components.Action;
+import com.haulmont.cuba.gui.components.Button;
+import com.haulmont.cuba.gui.components.Component;
+import com.haulmont.cuba.gui.components.GroupTable;
+import com.haulmont.cuba.gui.components.HBoxLayout;
+import com.haulmont.cuba.gui.components.Table;
 import com.haulmont.cuba.gui.components.actions.BaseAction;
 import com.haulmont.cuba.gui.data.GroupDatasource;
 import com.haulmont.cuba.gui.export.ExportDisplay;
@@ -44,7 +50,7 @@ public class ContractBrowse extends AbstractLookup {
     protected WebdavDocumentsManagementService documentsService;
 
     @Inject
-    private GroupTable<Contract> contractsTable;
+    protected GroupTable<Contract> contractsTable;
 
     int i = 0;
 
@@ -60,6 +66,7 @@ public class ContractBrowse extends AbstractLookup {
         //f.ge
         //documentLink.setDocumentId(entity.getDocument().getId().toString());
         documentLink.setFileDescriptor(entity.getDocument());
+
         //documentLink.setDocumentCaption("newCap");
         //documentLink.setIcon("icons/save.png");
 
@@ -145,7 +152,7 @@ public class ContractBrowse extends AbstractLookup {
         WebdavDocumentVersion latestVersion = documentVersionsService.retrieveLastVersionByFileDescriptorNN(
                 entity.getDocument(), "webdavDocumentVersion-with-deps-view");
 
-        return new Table.PlainTextCell(String.valueOf(latestVersion.getNaturalVersionIdentifier()));
+        return new Table.PlainTextCell(String.valueOf(latestVersion.getNaturalVersionId()));
     }
 
     private void showMessage(Action.ActionPerformedEvent actionPerformedEvent) {

@@ -42,6 +42,5 @@
             <rows datasource="webdavDocumentVersionsDs"/>
             <rowsCount/>
         </groupTable>
-        <webdav:documentVersionLink documentVersionId="document version id"/>
     </layout>
 </window>
