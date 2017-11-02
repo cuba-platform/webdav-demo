@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
-        xmlns:webdav="http://schemas.company.com/agd/0.1/ui-component.xsd"
         caption="msg://editorCaption"
         class="com.haulmont.contractsystem.web.contract.ContractEdit"
         datasource="contractDs"
@@ -11,13 +10,16 @@
                     class="com.haulmont.contractsystem.entity.Contract"
                     view="contract-with-deps-view"/>
     </dsContext>
-    <dialogMode height="600"
-                width="800"/>
+    <dialogMode forceDialog="true"
+                height="AUTO"
+                width="AUTO"/>
     <layout expand="windowActions"
+            margin="true"
             spacing="true">
         <fieldGroup id="fieldGroup"
-                    datasource="contractDs">
-            <column width="250px">
+                    datasource="contractDs"
+                    width="100%">
+            <column width="400px">
                 <field property="name"/>
                 <field property="contractor"/>
                 <field property="document"/>

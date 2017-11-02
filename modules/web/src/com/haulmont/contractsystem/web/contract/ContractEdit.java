@@ -23,7 +23,12 @@ public class ContractEdit extends AbstractEditor<Contract> {
 
     @Override
     public void init(Map<String, Object> params) {
-        documentField.addFileUploadSucceedListener(this::createWebdavEntities);
+        //documentField.addFileUploadSucceedListener(this::createWebdavEntities);
+        //documentField.setClearButtonCaption("test");
+        //documentField.setClearButtonIcon("icons/save.png");
+        //documentField.setShowClearButton(true);
+        documentField.setRequired(false);
+
     }
 
     protected void createWebdavEntities(FileUploadField.FileUploadSucceedEvent event) {
