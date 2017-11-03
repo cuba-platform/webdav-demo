@@ -21,6 +21,4 @@
             template="com/haulmont/contractsystem/web/contract/contract-edit.xml"/>
     <screen id="contractsystem$Contractor.edit"
             template="com/haulmont/contractsystem/web/contractor/contractor-edit.xml"/>
-    <screen id="webdav$WebdavDocumentVersionDialog.browse"
-            template="com/haulmont/contractsystem/web/webdavdocumentversion/webdav-document-version-dialog-browse.xml"/>
 </screen-config>
