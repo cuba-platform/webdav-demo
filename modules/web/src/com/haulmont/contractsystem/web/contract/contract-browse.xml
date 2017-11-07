@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
-        xmlns:webdav="http://schemas.haulmont.com/webdav/ui-component.xsd"
         caption="msg://browseCaption"
         class="com.haulmont.contractsystem.web.contract.ContractBrowse"
         focusComponent="contractsTable"
@@ -11,7 +10,7 @@
                          class="com.haulmont.contractsystem.entity.Contract"
                          view="contract-with-deps-view">
             <query>
-                <![CDATA[select e from contractsystem$Contract e]]>
+                <![CDATA[select e from contractsystem$Contract e order by e.name]]>
             </query>
         </groupDatasource>
     </dsContext>
@@ -34,9 +33,6 @@
             </actions>
             <columns>
                 <column id="name"/>
-                <column id="latestVersion"
-                        caption="msg://latestVersion"
-                        generator="generateLatestVersionCell"/>
                 <column id="link"
                         caption="msg://link"
                         generator="generateLinkCell"/>
