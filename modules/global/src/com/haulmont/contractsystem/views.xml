@@ -61,4 +61,22 @@
         <property name="webdavDocument"
                   view="_minimal"/>
     </view>
+    <view class="com.haulmont.webdav.entity.WebdavDocument"
+          name="webdavDocument-security">
+        <property name="versions" view="webdavDocumentVersion-security"/>
+    </view>
+    <view class="com.haulmont.webdav.entity.WebdavDocumentVersion"
+          extends="_local"
+          name="webdavDocumentVersion-security"
+          systemProperties="true">
+        <property name="webdavDocument"/>
+        <property name="fileDescriptor"/>
+    </view>
+    <view class="com.haulmont.webdav.entity.WebdavDocumentVersion"
+          extends="_local"
+          name="webdavDocumentVersion-look"
+          systemProperties="true">
+        <property name="webdavDocument"/>
+        <property name="fileDescriptor"/>
+    </view>
 </views>

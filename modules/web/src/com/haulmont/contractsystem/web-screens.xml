@@ -21,4 +21,10 @@
             template="com/haulmont/contractsystem/web/contract/contract-edit.xml"/>
     <screen id="contractsystem$Contractor.edit"
             template="com/haulmont/contractsystem/web/contractor/contractor-edit.xml"/>
+    <screen id="contractsystem$SecurityDemo"
+            template="com/haulmont/contractsystem/web/demo/security-demo.xml"/>
+    <screen id="look-demo"
+            template="com/haulmont/contractsystem/web/demo/look-demo.xml"/>
+    <screen id="screen"
+            template="com/haulmont/contractsystem/web/demo/screen.xml"/>
 </screen-config>

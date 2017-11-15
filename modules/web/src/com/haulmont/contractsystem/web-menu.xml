@@ -4,6 +4,9 @@
           insertBefore="administration">
         <item screen="contractsystem$Contractor.browse"/>
         <item screen="contractsystem$Contract.browse"/>
+        <item screen="contractsystem$SecurityDemo"/>
+        <item screen="look-demo"/>
+        <item screen="screen"/>
     </menu>
     <menu id="application-contractsystem-system"
           insertBefore="administration">
