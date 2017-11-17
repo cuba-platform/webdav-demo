@@ -6,5 +6,6 @@
         <class>com.haulmont.contractsystem.entity.Contract</class>
         <class>com.haulmont.contractsystem.entity.Contractor</class>
         <class>com.haulmont.contractsystem.entity.ContractUser</class>
+        <class>com.haulmont.contractsystem.entity.WebdavContract</class>
     </persistence-unit>
 </persistence>

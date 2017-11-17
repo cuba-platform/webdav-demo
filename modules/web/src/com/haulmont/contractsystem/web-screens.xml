@@ -25,6 +25,10 @@
             template="com/haulmont/contractsystem/web/demo/security-demo.xml"/>
     <screen id="look-demo"
             template="com/haulmont/contractsystem/web/demo/look-demo.xml"/>
-    <screen id="screen"
+    <screen id="behavior-demo"
             template="com/haulmont/contractsystem/web/demo/screen.xml"/>
+    <screen id="contractsystem$WebdavContract.browse"
+            template="com/haulmont/contractsystem/web/webdavcontract/webdav-contract-browse.xml"/>
+    <screen id="contractsystem$WebdavContract.edit"
+            template="com/haulmont/contractsystem/web/webdavcontract/webdav-contract-edit.xml"/>
 </screen-config>

@@ -6,7 +6,8 @@
         <item screen="contractsystem$Contract.browse"/>
         <item screen="contractsystem$SecurityDemo"/>
         <item screen="look-demo"/>
-        <item screen="screen"/>
+        <item screen="behavior-demo"/>
+        <item screen="contractsystem$WebdavContract.browse"/>
     </menu>
     <menu id="application-contractsystem-system"
           insertBefore="administration">

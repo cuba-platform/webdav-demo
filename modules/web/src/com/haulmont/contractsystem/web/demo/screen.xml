@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        xmlns:webdav="http://schemas.haulmont.com/webdav/ui-component.xsd"
         caption="msg://caption"
         class="com.haulmont.contractsystem.web.demo.Screen"
         messagesPack="com.haulmont.contractsystem.web.demo">
@@ -15,15 +16,8 @@
     <dialogMode height="600"
                 width="800"/>
     <layout>
-        <dataGrid id="data"
-                  datasource="webdavDocumentVersionsDs"
-                  height="100px"
-                  width="200px">
-            <columns>
-                <column property="contentType"/>
-                <column property="sha1sum"/>
-                <column property="naturalVersionId"/>
-            </columns>
-        </dataGrid>
+
+        <webdav:webdavDocumentVersionLink documentVersionId=""/>
+
     </layout>
 </window>

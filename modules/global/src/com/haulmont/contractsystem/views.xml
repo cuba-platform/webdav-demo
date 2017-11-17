@@ -63,7 +63,8 @@
     </view>
     <view class="com.haulmont.webdav.entity.WebdavDocument"
           name="webdavDocument-security">
-        <property name="versions" view="webdavDocumentVersion-security"/>
+        <property name="versions"
+                  view="webdavDocumentVersion-security"/>
     </view>
     <view class="com.haulmont.webdav.entity.WebdavDocumentVersion"
           extends="_local"
@@ -78,5 +79,15 @@
           systemProperties="true">
         <property name="webdavDocument"/>
         <property name="fileDescriptor"/>
+    </view>
+    <view class="com.haulmont.contractsystem.entity.WebdavContract"
+          extends="_local"
+          name="webdavContract-view">
+        <property name="contractor"
+                  view="_minimal"/>
+        <property name="document"
+                  view="_minimal">
+            <property name="versioning"/>
+        </property>
     </view>
 </views>
