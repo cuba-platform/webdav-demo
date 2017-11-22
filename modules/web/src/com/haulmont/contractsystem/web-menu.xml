@@ -11,7 +11,8 @@
     </menu>
     <menu id="application-contractsystem-system"
           insertBefore="administration">
-        <item screen="webdav$WebdavDocument.browse"/>
+        <item id="contractsystem$WebdavDocument.browse"
+              screen="webdav$WebdavDocument.browse"/>
         <item screen="webdav$WebdavDocumentVersion.browse"/>
         <item screen="webdav$WebdavLockDescriptor.browse"/>
     </menu>

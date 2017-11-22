@@ -82,12 +82,22 @@
     </view>
     <view class="com.haulmont.contractsystem.entity.WebdavContract"
           extends="_local"
-          name="webdavContract-view">
+          name="webdavContract-view"
+          overwrite="true">
         <property name="contractor"
                   view="_minimal"/>
         <property name="document"
                   view="_minimal">
             <property name="versioning"/>
+            <property name="versions"
+                      view="_minimal"/>
+            <property name="webdavLockDescriptor"
+                      view="_minimal"/>
+            <property name="lastVersion"
+                      view="_minimal">
+                <property name="fileDescriptor"
+                          view="_minimal"/>
+            </property>
         </property>
     </view>
 </views>

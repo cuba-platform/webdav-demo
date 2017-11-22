@@ -3,7 +3,7 @@
     <include file="com/haulmont/contractsystem/screens.xml"/>
     <screen id="contractsystem$Contractor.browse"
             template="com/haulmont/contractsystem/web/contractor/contractor-browse.xml"/>
-    <screen id="webdav$WebdavDocument.browse"
+    <screen id="contractsystem$WebdavDocument.browse"
             template="com/haulmont/contractsystem/web/webdavdocument/webdav-document-browse.xml"/>
     <screen id="webdav$WebdavDocument.edit"
             template="com/haulmont/contractsystem/web/webdavdocument/webdav-document-edit.xml"/>
