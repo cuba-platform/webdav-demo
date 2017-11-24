@@ -65,6 +65,8 @@
           name="webdavDocument-security">
         <property name="versions"
                   view="webdavDocumentVersion-security"/>
+        <property name="lastVersion"
+                  view="_minimal"/>
     </view>
     <view class="com.haulmont.webdav.entity.WebdavDocumentVersion"
           extends="_local"

@@ -8,7 +8,10 @@
     <dsContext>
         <datasource id="contractDs"
                     class="com.haulmont.contractsystem.entity.Contract"
-                    view="contract-with-deps-view"/>
+                    view="contract-with-deps-view">
+            <datasource id="documentDs"
+                        property="document"/>
+        </datasource>
     </dsContext>
     <dialogMode forceDialog="true"
                 height="AUTO"
@@ -25,6 +28,7 @@
                 <field property="document"/>
             </column>
         </fieldGroup>
+        <upload datasource="documentDs"/>
         <frame id="windowActions"
                screen="editWindowActions"/>
     </layout>

@@ -24,7 +24,8 @@
             <properties include=".*"/>
         </filter>
         <groupTable id="contractsTable"
-                    width="100%" multiselect="true">
+                    multiselect="true"
+                    width="100%">
             <actions>
                 <action id="create"/>
                 <action id="edit"/>
@@ -49,8 +50,10 @@
                         action="contractsTable.remove"/>
                 <button id="refreshBtn"
                         action="contractsTable.refresh"/>
+                <button id="mutatorBtn"
+                        caption="Mutator"
+                        invoke="onMutatorBtnClick"/>
             </buttonsPanel>
         </groupTable>
-
     </layout>
 </window>
