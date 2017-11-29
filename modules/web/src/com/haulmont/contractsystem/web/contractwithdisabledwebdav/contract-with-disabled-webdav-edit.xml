@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.haulmont.contractsystem.web.contractwithdisabledwebdav.ContractWithDisabledWebdavEdit"
+        datasource="contractWithDisabledWebdavDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.haulmont.contractsystem.web.contractwithdisabledwebdav">
+    <dsContext>
+        <datasource id="contractWithDisabledWebdavDs"
+                    class="com.haulmont.contractsystem.entity.ContractWithDisabledWebdav"
+                    view="contractWithDisabledWebdavEdit-view"/>
+    </dsContext>
+    <dialogMode forceDialog="true"
+                height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="contractWithDisabledWebdavDs">
+            <column width="250px">
+                <field property="name"/>
+                <field property="file"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

@@ -26,9 +26,17 @@
     <screen id="look-demo"
             template="com/haulmont/contractsystem/web/demo/look-demo.xml"/>
     <screen id="behavior-demo"
-            template="com/haulmont/contractsystem/web/demo/screen.xml"/>
+            template="com/haulmont/contractsystem/web/demo/upload-field-not-in-field-group.xml"/>
     <screen id="contractsystem$WebdavContract.browse"
             template="com/haulmont/contractsystem/web/webdavcontract/webdav-contract-browse.xml"/>
     <screen id="contractsystem$WebdavContract.edit"
             template="com/haulmont/contractsystem/web/webdavcontract/webdav-contract-edit.xml"/>
+    <screen id="contractsystem$ContractWithDisabledWebdav.browse"
+            template="com/haulmont/contractsystem/web/contractwithdisabledwebdav/contract-with-disabled-webdav-browse.xml"/>
+    <screen id="contractsystem$ContractWithDisabledWebdav.edit"
+            template="com/haulmont/contractsystem/web/contractwithdisabledwebdav/contract-with-disabled-webdav-edit.xml"/>
+    <screen id="contractsystem$ContractWithSimpleFileDescriptor.browse"
+            template="com/haulmont/contractsystem/web/contractwithsimplefiledescriptor/contract-with-simple-file-descriptor-browse.xml"/>
+    <screen id="contractsystem$ContractWithSimpleFileDescriptor.edit"
+            template="com/haulmont/contractsystem/web/contractwithsimplefiledescriptor/contract-with-simple-file-descriptor-edit.xml"/>
 </screen-config>

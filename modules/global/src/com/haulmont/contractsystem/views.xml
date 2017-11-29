@@ -100,4 +100,40 @@
             </property>
         </property>
     </view>
+    <view class="com.haulmont.contractsystem.entity.ContractWithDisabledWebdav"
+          extends="_local"
+          name="contractWithDisabledWebdavBrowse-view">
+        <property name="file"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.contractsystem.entity.ContractWithDisabledWebdav"
+          extends="_local"
+          name="contractWithDisabledWebdavEdit-view">
+        <property name="file"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.contractsystem.entity.ContractWithSimpleFileDescriptor"
+          extends="_local"
+          name="contractWithSimpleFileDescriptorBrowse-view">
+        <property name="file"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.contractsystem.entity.ContractWithSimpleFileDescriptor"
+          extends="_local"
+          name="contractWithSimpleFileDescriptorEdit-view">
+        <property name="file"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.contractsystem.entity.Contract"
+          extends="_local"
+          name="contract-view">
+        <property name="document"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.contractsystem.entity.ContractWithSimpleFileDescriptor"
+          extends="_local"
+          name="contractWithSimpleFileDescriptor-view">
+        <property name="file"
+                  view="_minimal"/>
+    </view>
 </views>

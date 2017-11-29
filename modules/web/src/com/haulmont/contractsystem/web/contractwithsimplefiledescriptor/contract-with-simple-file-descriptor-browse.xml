@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.haulmont.contractsystem.web.contractwithsimplefiledescriptor.ContractWithSimpleFileDescriptorBrowse"
+        focusComponent="contractWithSimpleFileDescriptorsTable"
+        lookupComponent="contractWithSimpleFileDescriptorsTable"
+        messagesPack="com.haulmont.contractsystem.web.contractwithsimplefiledescriptor">
+    <dsContext>
+        <groupDatasource id="contractWithSimpleFileDescriptorsDs"
+                         class="com.haulmont.contractsystem.entity.ContractWithSimpleFileDescriptor"
+                         view="contractWithSimpleFileDescriptorBrowse-view">
+            <query>
+                <![CDATA[select e from contractsystem$ContractWithSimpleFileDescriptor e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="contractWithSimpleFileDescriptorsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="contractWithSimpleFileDescriptorsTable"
+                datasource="contractWithSimpleFileDescriptorsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="contractWithSimpleFileDescriptorsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="file"/>
+            </columns>
+            <rows datasource="contractWithSimpleFileDescriptorsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="contractWithSimpleFileDescriptorsTable.create"/>
+                <button id="editBtn"
+                        action="contractWithSimpleFileDescriptorsTable.edit"/>
+                <button id="removeBtn"
+                        action="contractWithSimpleFileDescriptorsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

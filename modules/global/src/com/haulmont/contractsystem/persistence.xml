@@ -7,5 +7,7 @@
         <class>com.haulmont.contractsystem.entity.Contractor</class>
         <class>com.haulmont.contractsystem.entity.ContractUser</class>
         <class>com.haulmont.contractsystem.entity.WebdavContract</class>
+        <class>com.haulmont.contractsystem.entity.ContractWithDisabledWebdav</class>
+        <class>com.haulmont.contractsystem.entity.ContractWithSimpleFileDescriptor</class>
     </persistence-unit>
 </persistence>

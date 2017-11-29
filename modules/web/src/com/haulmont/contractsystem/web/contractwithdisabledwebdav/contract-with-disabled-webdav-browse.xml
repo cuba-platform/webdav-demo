@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.haulmont.contractsystem.web.contractwithdisabledwebdav.ContractWithDisabledWebdavBrowse"
+        focusComponent="contractWithDisabledWebdavsTable"
+        lookupComponent="contractWithDisabledWebdavsTable"
+        messagesPack="com.haulmont.contractsystem.web.contractwithdisabledwebdav">
+    <dsContext>
+        <groupDatasource id="contractWithDisabledWebdavsDs"
+                         class="com.haulmont.contractsystem.entity.ContractWithDisabledWebdav"
+                         view="contractWithDisabledWebdavBrowse-view">
+            <query>
+                <![CDATA[select e from contractsystem$ContractWithDisabledWebdav e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="contractWithDisabledWebdavsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="contractWithDisabledWebdavsTable"
+                datasource="contractWithDisabledWebdavsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="contractWithDisabledWebdavsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="file"/>
+            </columns>
+            <rows datasource="contractWithDisabledWebdavsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="contractWithDisabledWebdavsTable.create"/>
+                <button id="editBtn"
+                        action="contractWithDisabledWebdavsTable.edit"/>
+                <button id="removeBtn"
+                        action="contractWithDisabledWebdavsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://caption"
+        class="com.haulmont.contractsystem.web.demo.UploadFieldNotInFieldGroup"
+        messagesPack="com.haulmont.contractsystem.web.demo"
+        xmlns:webdav="http://schemas.haulmont.com/webdav/ui-component.xsd">
+    <dsContext>
+        <collectionDatasource id="contractsDs"
+                              class="com.haulmont.contractsystem.entity.Contract"
+                              view="contract-view">
+            <query>
+                <![CDATA[select e from contractsystem$Contract e]]>
+            </query>
+        </collectionDatasource>
+        <collectionDatasource id="contractWithSimpleFileDescriptorsDs"
+                              class="com.haulmont.contractsystem.entity.ContractWithSimpleFileDescriptor"
+                              view="contractWithSimpleFileDescriptor-view">
+            <query>
+                <![CDATA[select e from contractsystem$ContractWithSimpleFileDescriptor e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout>
+        <groupBox spacing="true">
+            <lookupPickerField optionsDatasource="contractsDs"/>
+            <upload id="contractsUpload"
+                    datasource="contractsDs"
+                    fileStoragePutMode="IMMEDIATE"
+                    property="document"/>
+        </groupBox>
+        <groupBox spacing="true">
+            <lookupPickerField optionsDatasource="contractWithSimpleFileDescriptorsDs"/>
+            <upload datasource="contractWithSimpleFileDescriptorsDs"
+                    property="file"
+                    showFileName="true"/>
+        </groupBox>
+        <buttonsPanel>
+            <button id="save"
+                    caption="save"
+                    invoke="onSaveClick"/>
+        </buttonsPanel>
+    </layout>
+</window>
