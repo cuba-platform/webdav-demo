@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://caption"
+        class="com.haulmont.contractsystem.web.demo.SimpleUploadFieldNotInGroup"
+        messagesPack="com.haulmont.contractsystem.web.demo">
+    <dsContext>
+        <collectionDatasource id="contractWithSimpleFileDescriptorsDs"
+                              class="com.haulmont.contractsystem.entity.ContractWithSimpleFileDescriptor"
+                              view="contractWithSimpleFileDescriptorBrowse-view">
+            <query>
+                <![CDATA[select e from contractsystem$ContractWithSimpleFileDescriptor e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout>
+        <vbox spacing="true">
+            <table id="contractWithSimpleFileDescriptorsTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="refresh"/>
+                </actions>
+                <columns>
+                    <column id="name"/>
+                    <column id="file"/>
+                </columns>
+                <rows datasource="contractWithSimpleFileDescriptorsDs"/>
+                <buttonsPanel>
+                    <button action="contractWithSimpleFileDescriptorsTable.refresh"/>
+                </buttonsPanel>
+            </table>
+            <label id="selectedItem"/>
+            <upload id="contractsUpload"
+                    datasource="contractWithSimpleFileDescriptorsDs"
+                    property="file"
+                    showFileName="true"/>
+            <button id="save"
+                    caption="msg://save"
+                    invoke="onSaveClick"/>
+        </vbox>
+    </layout>
+</window>

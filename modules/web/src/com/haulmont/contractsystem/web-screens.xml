@@ -25,8 +25,8 @@
             template="com/haulmont/contractsystem/web/demo/security-demo.xml"/>
     <screen id="look-demo"
             template="com/haulmont/contractsystem/web/demo/look-demo.xml"/>
-    <screen id="behavior-demo"
-            template="com/haulmont/contractsystem/web/demo/upload-field-not-in-field-group.xml"/>
+    <screen id="webdavupload-field-not-in-field-group"
+            template="com/haulmont/contractsystem/web/demo/webdavupload-field-not-in-field-group.xml"/>
     <screen id="contractsystem$WebdavContract.browse"
             template="com/haulmont/contractsystem/web/webdavcontract/webdav-contract-browse.xml"/>
     <screen id="contractsystem$WebdavContract.edit"
@@ -39,4 +39,6 @@
             template="com/haulmont/contractsystem/web/contractwithsimplefiledescriptor/contract-with-simple-file-descriptor-browse.xml"/>
     <screen id="contractsystem$ContractWithSimpleFileDescriptor.edit"
             template="com/haulmont/contractsystem/web/contractwithsimplefiledescriptor/contract-with-simple-file-descriptor-edit.xml"/>
+    <screen id="simple-upload-field-not-in-group.xml"
+            template="com/haulmont/contractsystem/web/demo/simple-upload-field-not-in-group.xml"/>
 </screen-config>
