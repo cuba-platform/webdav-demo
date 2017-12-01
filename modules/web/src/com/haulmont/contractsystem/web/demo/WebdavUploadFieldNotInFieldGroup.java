@@ -32,6 +32,9 @@ public class WebdavUploadFieldNotInFieldGroup extends AbstractWindow {
     }
 
     public void onSaveClick() {
+        if (! validateAll()) {
+            return;
+        }
         getDsContext().commit();
     }
 

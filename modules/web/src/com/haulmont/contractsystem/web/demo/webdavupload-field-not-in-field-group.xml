@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
-        caption="msg://caption"
+        caption="msg://menu-config.webdavupload-field-not-in-field-group"
         class="com.haulmont.contractsystem.web.demo.WebdavUploadFieldNotInFieldGroup"
         messagesPack="com.haulmont.contractsystem.web.demo"
         xmlns:webdav="http://schemas.haulmont.com/webdav/ui-component.xsd">

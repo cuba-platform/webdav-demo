@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
-        caption="msg://caption"
+        caption="msg://menu-config.simple-upload-field-not-in-group.xml"
         class="com.haulmont.contractsystem.web.demo.SimpleUploadFieldNotInGroup"
         messagesPack="com.haulmont.contractsystem.web.demo">
     <dsContext>
@@ -35,7 +35,8 @@
             <upload id="contractsUpload"
                     datasource="contractWithSimpleFileDescriptorsDs"
                     property="file"
-                    showFileName="true"/>
+                    showFileName="true"
+                    showClearButton="true"/>
             <button id="save"
                     caption="msg://save"
                     invoke="onSaveClick"/>
