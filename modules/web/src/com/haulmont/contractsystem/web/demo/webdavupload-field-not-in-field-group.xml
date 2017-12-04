@@ -34,10 +34,14 @@
                 </buttonsPanel>
             </table>
             <label id="selectedItem"/>
-            <webdav:webdavUpload id="contractsUpload"
-                                 datasource="contractsDs"
-                                 property="document"
-                                 showFileName="true"/>
+            <webdav:webdav-upload id="contractsWebdavUpload"
+                                  datasource="contractsDs"
+                                  property="document"
+                                  showFileName="true"/>
+            <upload id="contractsUpload"
+                    datasource="contractsDs"
+                    property="document"
+                    showFileName="true"/>
             <button id="save"
                     caption="msg://save"
                     invoke="onSaveClick"/>

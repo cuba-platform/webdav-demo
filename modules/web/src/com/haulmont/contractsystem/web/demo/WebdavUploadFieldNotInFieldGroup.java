@@ -6,7 +6,6 @@ import com.haulmont.cuba.gui.components.Component;
 import com.haulmont.cuba.gui.components.Label;
 import com.haulmont.cuba.gui.data.CollectionDatasource;
 import com.haulmont.cuba.gui.xml.layout.ComponentsFactory;
-import com.haulmont.webdav.components.WebdavUploadField;
 import com.haulmont.webdav.webdav.component.WebWebdavDocumentLink;
 
 import javax.inject.Inject;
@@ -22,9 +21,6 @@ public class WebdavUploadFieldNotInFieldGroup extends AbstractWindow {
 
     @Inject
     protected Label selectedItem;
-
-    @Inject
-    protected WebdavUploadField contractsUpload;
 
     @Override
     public void ready() {
