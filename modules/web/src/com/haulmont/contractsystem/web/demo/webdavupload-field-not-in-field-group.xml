@@ -34,14 +34,42 @@
                 </buttonsPanel>
             </table>
             <label id="selectedItem"/>
-            <webdav:webdav-upload id="contractsWebdavUpload"
-                                  datasource="contractsDs"
-                                  property="document"
-                                  showFileName="true"/>
-            <upload id="contractsUpload"
-                    datasource="contractsDs"
-                    property="document"
-                    showFileName="true"/>
+            <grid height="200px"
+                  spacing="true"
+                  width="800px">
+                <columns count="3"/>
+                <rows>
+                    <row>
+                        <label/>
+                        <label align="MIDDLE_CENTER"
+                               value="Webdav"/>
+                        <label align="MIDDLE_CENTER"
+                               value="Upload"/>
+                    </row>
+                    <row>
+                        <label align="MIDDLE_LEFT"
+                               value="ShowFilename = false"/>
+                        <webdav:webdav-upload align="MIDDLE_RIGHT"
+                                              datasource="contractsDs"
+                                              property="document"/>
+                        <upload align="MIDDLE_RIGHT"
+                                datasource="contractsDs"
+                                property="document"/>
+                    </row>
+                    <row>
+                        <label align="MIDDLE_LEFT"
+                               value="ShowFilename = true"/>
+                        <webdav:webdav-upload align="MIDDLE_RIGHT"
+                                              datasource="contractsDs"
+                                              property="document"
+                                              showFileName="true"/>
+                        <upload align="MIDDLE_RIGHT"
+                                datasource="contractsDs"
+                                property="document"
+                                showFileName="true"/>
+                    </row>
+                </rows>
+            </grid>
             <button id="save"
                     caption="msg://save"
                     invoke="onSaveClick"/>
