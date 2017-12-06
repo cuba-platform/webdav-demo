@@ -4,6 +4,8 @@ import com.haulmont.cuba.core.entity.FileDescriptor;
 import com.haulmont.cuba.gui.components.AbstractWindow;
 import com.haulmont.cuba.gui.components.Component;
 import com.haulmont.cuba.gui.components.LookupField;
+import com.haulmont.cuba.gui.components.Table;
+import com.haulmont.cuba.gui.components.actions.RefreshAction;
 import com.haulmont.cuba.gui.data.CollectionDatasource;
 import com.haulmont.cuba.gui.xml.layout.ComponentsFactory;
 import com.haulmont.webdav.components.WebdavDocumentLink;
@@ -11,6 +13,8 @@ import com.haulmont.webdav.entity.WebdavDocumentVersion;
 import org.apache.commons.lang.StringUtils;
 
 import javax.inject.Inject;
+import javax.inject.Named;
+import java.util.Collections;
 import java.util.Map;
 import java.util.UUID;
 
@@ -30,6 +34,12 @@ public class LookDemo extends AbstractWindow {
     @Inject
     protected WebdavDocumentLink webdavLink;
 
+    @Inject
+    protected Table<WebdavDocumentVersion> table;
+
+    @Named("table.refresh")
+    protected RefreshAction tableRefresh;
+
     @Override
     public void init(Map<String, Object> params) {
         super.init(params);
@@ -43,13 +53,13 @@ public class LookDemo extends AbstractWindow {
                     selectedLink = ((WebdavDocumentLink) getComponent(version.getId().toString()));
                 }
         );
+
+        tableRefresh.setAfterRefreshHandler(() -> {
+            table.setSelected(Collections.emptyList());
+        });
     }
 
     public Component generateActionsCell(WebdavDocumentVersion entity) {
-        return returnTestData(entity);
-    }
-
-    Component returnTestData(WebdavDocumentVersion entity) {
         WebdavDocumentLink link = componentsFactory.createComponent(WebdavDocumentLink.class)
                 .withFileDescriptor(entity.getFileDescriptor());
         link.setId(entity.getId().toString());

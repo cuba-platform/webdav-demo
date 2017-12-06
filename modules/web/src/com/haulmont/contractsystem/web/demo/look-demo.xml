@@ -28,7 +28,6 @@
         <buttonsPanel align="MIDDLE_LEFT">
             <button action="table.refresh"/>
             <button id="showVersion"
-                    align="MIDDLE_LEFT"
                     caption="msg://showVersion"
                     invoke="showVersion"/>
             <button id="setCubaDownloadIcon"
@@ -42,10 +41,12 @@
             <button id="removeCaption"
                     caption="msg://removeCaption"
                     invoke="onRemoveCaptionClick"/>
+        </buttonsPanel>
+        <buttonsPanel>
             <lookupField id="fileDescriptorLookup"
                          optionsDatasource="fileDescriptorsDs"/>
             <button id="apply"
-                    caption="apply "
+                    caption="msg://apply "
                     invoke="onApplyClick"/>
         </buttonsPanel>
         <table id="table"
@@ -67,6 +68,11 @@
             </columns>
             <rows datasource="webdavDocumentVersionsDs"/>
         </table>
-        <webdav:document-link id="webdavLink" datasource="webdavDocumentVersionsDs" property="fileDescriptor"/>
+        <webdav:document-link id="webdavLink"
+                              datasource="webdavDocumentVersionsDs"
+                              property="fileDescriptor"/>
+        <webdav:document-version-link id="webdavLinkVersion"
+                                      datasource="webdavDocumentVersionsDs"
+                                      property="fileDescriptor"/>
     </layout>
 </window>
