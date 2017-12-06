@@ -49,9 +49,9 @@
                     <row>
                         <label align="MIDDLE_LEFT"
                                value="ShowFilename = false"/>
-                        <webdav:webdav-upload align="MIDDLE_RIGHT"
-                                              datasource="contractsDs"
-                                              property="document"/>
+                        <webdav:upload align="MIDDLE_RIGHT"
+                                       datasource="contractsDs"
+                                       property="document"/>
                         <upload align="MIDDLE_RIGHT"
                                 datasource="contractsDs"
                                 property="document"/>
@@ -59,11 +59,11 @@
                     <row>
                         <label align="MIDDLE_LEFT"
                                value="ShowFilename = true"/>
-                        <webdav:webdav-upload align="MIDDLE_RIGHT"
-                                              datasource="contractsDs"
-                                              property="document"
-                                              showFileName="true"/>
-                        <upload align="MIDDLE_RIGHT"
+                        <webdav:upload align="MIDDLE_RIGHT"
+                                       datasource="contractsDs"
+                                       property="document"
+                                       showFileName="true"/>
+                        <upload id="upload2" align="MIDDLE_RIGHT"
                                 datasource="contractsDs"
                                 property="document"
                                 showFileName="true"/>

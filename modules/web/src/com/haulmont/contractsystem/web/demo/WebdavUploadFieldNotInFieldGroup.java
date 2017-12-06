@@ -3,6 +3,7 @@ package com.haulmont.contractsystem.web.demo;
 import com.haulmont.contractsystem.entity.Contract;
 import com.haulmont.cuba.gui.components.AbstractWindow;
 import com.haulmont.cuba.gui.components.Component;
+import com.haulmont.cuba.gui.components.FileUploadField;
 import com.haulmont.cuba.gui.components.Label;
 import com.haulmont.cuba.gui.data.CollectionDatasource;
 import com.haulmont.cuba.gui.xml.layout.ComponentsFactory;
@@ -21,6 +22,9 @@ public class WebdavUploadFieldNotInFieldGroup extends AbstractWindow {
 
     @Inject
     protected Label selectedItem;
+
+    @Inject
+    protected FileUploadField upload2;
 
     @Override
     public void ready() {

@@ -1,7 +1,9 @@
 package com.haulmont.contractsystem.web.demo;
 
+import com.haulmont.cuba.core.entity.FileDescriptor;
 import com.haulmont.cuba.gui.components.AbstractWindow;
 import com.haulmont.cuba.gui.components.Component;
+import com.haulmont.cuba.gui.components.LookupField;
 import com.haulmont.cuba.gui.data.CollectionDatasource;
 import com.haulmont.cuba.gui.xml.layout.ComponentsFactory;
 import com.haulmont.webdav.components.WebdavDocumentLink;
@@ -22,6 +24,11 @@ public class LookDemo extends AbstractWindow {
 
     protected WebdavDocumentLink selectedLink;
 
+    @Inject
+    protected LookupField fileDescriptorLookup;
+
+    @Inject
+    protected WebdavDocumentLink webdavLink;
 
     @Override
     public void init(Map<String, Object> params) {
@@ -47,24 +54,6 @@ public class LookDemo extends AbstractWindow {
                 .withFileDescriptor(entity.getFileDescriptor());
         link.setId(entity.getId().toString());
         registerComponent(link);
-
-        /*switch (n++) {
-            case 1:
-                link.setIsShowVersion(false);
-                break;
-            case 2:
-                link.setCaption("thisIsCustomCaption");
-                break;
-            case 3:
-                link.setIsShowVersion(false);
-                link.setIcon("icons/save.png");
-                break;
-            case 4:
-                link.setCaption("");
-                link.setIcon("icons/download.png");
-                break;
-        }*/
-
         return link;
     }
 
@@ -97,5 +86,11 @@ public class LookDemo extends AbstractWindow {
         }
 
         selectedLink.setCaption("");
+    }
+
+    public void onApplyClick() {
+        FileDescriptor newFd = fileDescriptorLookup.getValue();
+        selectedLink.setFileDescriptor(newFd);
+        webdavLink.setFileDescriptorId(newFd.getId());
     }
 }

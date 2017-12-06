@@ -2,7 +2,8 @@
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         caption="msg://caption"
         class="com.haulmont.contractsystem.web.demo.LookDemo"
-        messagesPack="com.haulmont.contractsystem.web.demo">
+        messagesPack="com.haulmont.contractsystem.web.demo"
+        xmlns:webdav="http://schemas.haulmont.com/webdav/ui-component.xsd">
     <dsContext>
         <collectionDatasource id="webdavDocumentVersionsDs"
                               class="com.haulmont.webdav.entity.WebdavDocumentVersion"
@@ -11,6 +12,12 @@
                 <![CDATA[select e from webdav$WebdavDocumentVersion e
                  where e.naturalVersionId is not null and e.webdavDocument is not null
                  order by e.naturalVersionId ]]>
+            </query>
+        </collectionDatasource>
+        <collectionDatasource id="fileDescriptorsDs"
+                              class="com.haulmont.cuba.core.entity.FileDescriptor">
+            <query>
+                <![CDATA[select e from sys$FileDescriptor e]]>
             </query>
         </collectionDatasource>
     </dsContext>
@@ -35,6 +42,11 @@
             <button id="removeCaption"
                     caption="msg://removeCaption"
                     invoke="onRemoveCaptionClick"/>
+            <lookupField id="fileDescriptorLookup"
+                         optionsDatasource="fileDescriptorsDs"/>
+            <button id="apply"
+                    caption="apply "
+                    invoke="onApplyClick"/>
         </buttonsPanel>
         <table id="table"
                height="300px"
@@ -55,5 +67,6 @@
             </columns>
             <rows datasource="webdavDocumentVersionsDs"/>
         </table>
+        <webdav:document-link id="webdavLink" datasource="webdavDocumentVersionsDs" property="fileDescriptor"/>
     </layout>
 </window>
