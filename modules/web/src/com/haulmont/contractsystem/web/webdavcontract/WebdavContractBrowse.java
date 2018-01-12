@@ -15,6 +15,6 @@ public class WebdavContractBrowse extends AbstractLookup {
 
     public Component generateDocumentCell(WebdavContract entity) {
         return componentsFactory.createComponent(WebdavDocumentLink.class)
-                .withDocument(entity.getDocument());
+                .withWebdavDocument(entity.getDocument());
     }
 }
