@@ -57,7 +57,7 @@
     </view>
     <view class="com.haulmont.webdav.entity.WebdavLockDescriptor"
           extends="_local"
-          name="webdavLockDescriptor-with-deps-view">
+          name="webdavLockDescriptor-with-deps-view-cs">
         <property name="webdavDocument"
                   view="_minimal"/>
     </view>
@@ -134,6 +134,18 @@
           extends="_local"
           name="contractWithSimpleFileDescriptor-view">
         <property name="file"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.contractsystem.entity.EntityWithManyToManyFileDescriptor"
+          extends="_local"
+          name="entityWithManyToManyFileDescriptor-view">
+        <property name="fileDescriptors"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.contractsystem.entity.EntityWithManyToManyFileDescriptor"
+          extends="_local"
+          name="entityWithManyToManyFileDescriptor-view_1">
+        <property name="fileDescriptors"
                   view="_minimal"/>
     </view>
 </views>

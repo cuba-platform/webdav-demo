@@ -8,7 +8,7 @@
     <dsContext>
         <groupDatasource id="webdavLockDescriptorsDs"
                          class="com.haulmont.webdav.entity.WebdavLockDescriptor"
-                         view="webdavLockDescriptor-with-deps-view">
+                         view="webdavLockDescriptor-with-deps-view-cs">
             <query>
                 <![CDATA[select e from webdav$WebdavLockDescriptor e]]>
             </query>

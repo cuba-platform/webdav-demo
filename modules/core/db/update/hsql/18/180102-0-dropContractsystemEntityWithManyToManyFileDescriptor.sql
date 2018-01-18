@@ -1,0 +1,1 @@
+drop table CONTRACTSYSTEM_ENTITY_WITH_MANY_TO_MANY_FILE_DESCRIPTOR if exists cascade ;

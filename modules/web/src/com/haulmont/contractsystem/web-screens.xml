@@ -41,4 +41,8 @@
             template="com/haulmont/contractsystem/web/contractwithsimplefiledescriptor/contract-with-simple-file-descriptor-edit.xml"/>
     <screen id="simple-upload-field-not-in-group.xml"
             template="com/haulmont/contractsystem/web/demo/simple-upload-field-not-in-group.xml"/>
+    <screen id="contractsystem$EntityWithManyToManyFileDescriptor.browse"
+            template="com/haulmont/contractsystem/web/entitywithmanytomanyfiledescriptor/entity-with-many-to-many-file-descriptor-browse.xml"/>
+    <screen id="contractsystem$EntityWithManyToManyFileDescriptor.edit"
+            template="com/haulmont/contractsystem/web/entitywithmanytomanyfiledescriptor/entity-with-many-to-many-file-descriptor-edit.xml"/>
 </screen-config>

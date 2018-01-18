@@ -9,5 +9,6 @@
         <class>com.haulmont.contractsystem.entity.WebdavContract</class>
         <class>com.haulmont.contractsystem.entity.ContractWithDisabledWebdav</class>
         <class>com.haulmont.contractsystem.entity.ContractWithSimpleFileDescriptor</class>
+        <class>com.haulmont.contractsystem.entity.EntityWithManyToManyFileDescriptor</class>
     </persistence-unit>
 </persistence>

@@ -8,7 +8,7 @@
     <dsContext>
         <datasource id="webdavLockDescriptorDs"
                     class="com.haulmont.webdav.entity.WebdavLockDescriptor"
-                    view="webdavLockDescriptor-with-deps-view"/>
+                    view="webdavLockDescriptor-with-deps-view-cs"/>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>

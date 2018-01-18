@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.haulmont.contractsystem.web.entitywithmanytomanyfiledescriptor.EntityWithManyToManyFileDescriptorEdit"
+        datasource="entityWithManyToManyFileDescriptorDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.haulmont.contractsystem.web.entitywithmanytomanyfiledescriptor">
+    <dsContext>
+        <datasource id="entityWithManyToManyFileDescriptorDs"
+                    class="com.haulmont.contractsystem.entity.EntityWithManyToManyFileDescriptor"
+                    view="entityWithManyToManyFileDescriptor-view_1">
+            <collectionDatasource id="fileDescriptorsDs"
+                                  property="fileDescriptors"/>
+        </datasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="entityWithManyToManyFileDescriptorDs">
+            <column width="250px">
+                <field property="name"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="fileDescriptorsBox"
+                  caption="msg://com.haulmont.contractsystem.entity/EntityWithManyToManyFileDescriptor.fileDescriptors">
+            <table id="fileDescriptorsTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="add"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="name"/>WebdavUriBuilder.java:109
+                    <column id="createDate"/>
+                    <column id="extension"/>
+                </columns>
+                <rows datasource="fileDescriptorsDs"/>
+                <buttonsPanel>
+                    <button action="fileDescriptorsTable.add"/>
+                    <button action="fileDescriptorsTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <multiUpload id="multiUpload"/>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

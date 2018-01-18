@@ -1,0 +1,1 @@
+drop table CONTRACTSYSTEM_CONTRACT_WITH_SIMPLE_FILE_DESCRIPTOR if exists cascade ;
