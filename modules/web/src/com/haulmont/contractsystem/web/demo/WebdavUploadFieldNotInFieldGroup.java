@@ -7,6 +7,9 @@ import com.haulmont.cuba.gui.components.FileUploadField;
 import com.haulmont.cuba.gui.components.Label;
 import com.haulmont.cuba.gui.data.CollectionDatasource;
 import com.haulmont.cuba.gui.xml.layout.ComponentsFactory;
+import com.haulmont.webdav.components.WebdavDocumentVersionLink;
+import com.haulmont.webdav.entity.WebdavDocument;
+import com.haulmont.webdav.service.WebdavDocumentsManagementService;
 import com.haulmont.webdav.webdav.component.WebWebdavDocumentLink;
 
 import javax.inject.Inject;
@@ -26,9 +29,22 @@ public class WebdavUploadFieldNotInFieldGroup extends AbstractWindow {
     @Inject
     protected FileUploadField upload2;
 
+    @Inject
+    protected WebdavDocumentVersionLink documentVersionLink;
+
+    @Inject
+    protected WebdavDocumentsManagementService documentsService;
+
     @Override
     public void ready() {
-        contractsDs.addItemChangeListener(e -> selectedItem.setValue("Selected: " + e.getItem()));
+        contractsDs.addItemChangeListener(e -> {
+            if (e.getItem() == null) { return; }
+
+            selectedItem.setValue("Selected: " + e.getItem());
+            WebdavDocument document = documentsService.retrieveDocumentByFileDescriptor(contractsDs.getItem().getDocument());
+            documentVersionLink.setIsUseLastVersion(true);
+            documentVersionLink.setWebdavDocument(document);
+        });
     }
 
     public void onSaveClick() {

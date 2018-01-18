@@ -49,9 +49,9 @@
                     <row>
                         <label align="MIDDLE_LEFT"
                                value="ShowFilename = false"/>
-                        <webdav:upload align="MIDDLE_RIGHT"
-                                       datasource="contractsDs"
-                                       property="document"/>
+                        <webdav:w-upload align="MIDDLE_RIGHT"
+                                         datasource="contractsDs"
+                                         property="document"/>
                         <upload align="MIDDLE_RIGHT"
                                 datasource="contractsDs"
                                 property="document"/>
@@ -59,17 +59,20 @@
                     <row>
                         <label align="MIDDLE_LEFT"
                                value="ShowFilename = true"/>
-                        <webdav:upload align="MIDDLE_RIGHT"
-                                       datasource="contractsDs"
-                                       property="document"
-                                       showFileName="true"/>
-                        <upload id="upload2" align="MIDDLE_RIGHT"
+                        <webdav:w-upload align="MIDDLE_RIGHT"
+                                         datasource="contractsDs"
+                                         property="document"
+                                         showFileName="true"/>
+                        <upload id="upload2"
+                                align="MIDDLE_RIGHT"
                                 datasource="contractsDs"
                                 property="document"
                                 showFileName="true"/>
                     </row>
                 </rows>
             </grid>
+            <label value="Read-only link to the last version:"/>
+            <webdav:document-version-link id="documentVersionLink"/>
             <button id="save"
                     caption="msg://save"
                     invoke="onSaveClick"/>
