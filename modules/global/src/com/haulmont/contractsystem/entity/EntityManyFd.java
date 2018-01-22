@@ -12,19 +12,28 @@ import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
 
 @NamePattern("%s|name")
-@Table(name = "CONTRACTSYSTEM_ENTITY_WITH_MANY_TO_MANY_FILE_DESCRIPTOR")
-@Entity(name = "contractsystem$EntityWithManyToManyFileDescriptor")
-public class EntityWithManyToManyFileDescriptor extends StandardEntity {
+@Table(name = "CONTRACTSYSTEM_ENTITY_MANY_FD")
+@Entity(name = "contractsystem$EntityManyFd")
+public class EntityManyFd extends StandardEntity {
     private static final long serialVersionUID = -1823040609249245410L;
 
     @Column(name = "NAME")
     protected String name;
 
-    @JoinTable(name = "CONTRACTSYSTEM_ENTITY_WITH_MANY_TO_MANY_FILE_DESCRIPTOR_FILE_DESCRIPTOR_LINK",
-        joinColumns = @JoinColumn(name = "ENTITY_WITH_MANY_TO_MANY_FILE_DESCRIPTOR_ID"),
+
+    @JoinTable(name = "CONTRACTSYSTEM_MANY",
+        joinColumns = @JoinColumn(name = "ENTITY_MANY_ID"),
         inverseJoinColumns = @JoinColumn(name = "FILE_DESCRIPTOR_ID"))
     @ManyToMany
-    protected List<FileDescriptor> fileDescriptors;
+    protected List<FileDescriptor> fds;
+
+    public void setFds(List<FileDescriptor> fds) {
+        this.fds = fds;
+    }
+
+    public List<FileDescriptor> getFds() {
+        return fds;
+    }
 
 
     public void setName(String name) {
@@ -33,14 +42,6 @@ public class EntityWithManyToManyFileDescriptor extends StandardEntity {
 
     public String getName() {
         return name;
-    }
-
-    public void setFileDescriptors(List<FileDescriptor> fileDescriptors) {
-        this.fileDescriptors = fileDescriptors;
-    }
-
-    public List<FileDescriptor> getFileDescriptors() {
-        return fileDescriptors;
     }
 
 

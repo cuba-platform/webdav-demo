@@ -1,6 +1,6 @@
 package com.haulmont.contractsystem.web.entitywithmanytomanyfiledescriptor;
 
-import com.haulmont.contractsystem.entity.EntityWithManyToManyFileDescriptor;
+import com.haulmont.contractsystem.entity.EntityManyFd;
 import com.haulmont.cuba.core.entity.FileDescriptor;
 import com.haulmont.cuba.core.global.FileStorageException;
 import com.haulmont.cuba.gui.components.AbstractEditor;
@@ -13,7 +13,7 @@ import javax.inject.Inject;
 import java.util.Map;
 import java.util.UUID;
 
-public class EntityWithManyToManyFileDescriptorEdit extends AbstractEditor<EntityWithManyToManyFileDescriptor> {
+public class EntityWithManyToManyFileDescriptorEdit extends AbstractEditor<EntityManyFd> {
 
     @Inject
     private FileMultiUploadField multiUpload;

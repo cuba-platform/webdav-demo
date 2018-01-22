@@ -7,6 +7,7 @@ import com.haulmont.cuba.gui.components.FileUploadField;
 import com.haulmont.cuba.gui.components.Label;
 import com.haulmont.cuba.gui.data.CollectionDatasource;
 import com.haulmont.cuba.gui.xml.layout.ComponentsFactory;
+import com.haulmont.webdav.components.WebdavDocumentLink;
 import com.haulmont.webdav.components.WebdavDocumentVersionLink;
 import com.haulmont.webdav.entity.WebdavDocument;
 import com.haulmont.webdav.service.WebdavDocumentsManagementService;
@@ -34,6 +35,12 @@ public class WebdavUploadFieldNotInFieldGroup extends AbstractWindow {
 
     @Inject
     protected WebdavDocumentsManagementService documentsService;
+
+    @Inject
+    protected WebdavDocumentVersionLink documentVersionLinkWithDatasource;
+
+    @Inject
+    protected WebdavDocumentLink documentLink;
 
     @Override
     public void ready() {

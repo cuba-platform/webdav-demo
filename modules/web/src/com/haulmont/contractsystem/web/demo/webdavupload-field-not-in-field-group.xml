@@ -73,6 +73,8 @@
             </grid>
             <label value="Read-only link to the last version:"/>
             <webdav:document-version-link id="documentVersionLink"/>
+            <webdav:document-version-link id="documentVersionLinkWithDatasource" datasource="contractsDs" property="document"/>
+            <webdav:document-link id="documentLink" datasource="contractsDs" property="document"/>
             <button id="save"
                     caption="msg://save"
                     invoke="onSaveClick"/>

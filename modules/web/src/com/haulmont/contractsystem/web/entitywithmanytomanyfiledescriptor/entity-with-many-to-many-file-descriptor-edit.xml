@@ -7,10 +7,10 @@
         messagesPack="com.haulmont.contractsystem.web.entitywithmanytomanyfiledescriptor">
     <dsContext>
         <datasource id="entityWithManyToManyFileDescriptorDs"
-                    class="com.haulmont.contractsystem.entity.EntityWithManyToManyFileDescriptor"
+                    class="com.haulmont.contractsystem.entity.EntityManyFd"
                     view="entityWithManyToManyFileDescriptor-view_1">
-            <collectionDatasource id="fileDescriptorsDs"
-                                  property="fileDescriptors"/>
+            <collectionDatasource id="fdsDs"
+                                  property="fds"/>
         </datasource>
     </dsContext>
     <dialogMode height="600"
@@ -23,8 +23,30 @@
                 <field property="name"/>
             </column>
         </fieldGroup>
+        <groupBox id="fdsBox"
+                  caption="msg://com.haulmont.contractsystem.entity/EntityManyFd.fds">
+            <table id="fdsTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="add"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="name"/>
+                    <column id="extension"/>
+                    <column id="size"/>
+                    <column id="createDate"/>
+                </columns>
+                <rows datasource="fdsDs"/>
+                <buttonsPanel>
+                    <button action="fdsTable.add"/>
+                    <button action="fdsTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
         <groupBox id="fileDescriptorsBox"
-                  caption="msg://com.haulmont.contractsystem.entity/EntityWithManyToManyFileDescriptor.fileDescriptors">
+                  caption="msg://com.haulmont.contractsystem.entity/EntityManyFd.fds">
             <table id="fileDescriptorsTable"
                    height="200px"
                    width="100%">
@@ -33,7 +55,7 @@
                     <action id="remove"/>
                 </actions>
                 <columns>
-                    <column id="name"/>WebdavUriBuilder.java:109
+                    <column id="name"/>
                     <column id="createDate"/>
                     <column id="extension"/>
                 </columns>

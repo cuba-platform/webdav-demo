@@ -7,7 +7,7 @@
         messagesPack="com.haulmont.contractsystem.web.entitywithmanytomanyfiledescriptor">
     <dsContext>
         <groupDatasource id="entityWithManyToManyFileDescriptorsDs"
-                         class="com.haulmont.contractsystem.entity.EntityWithManyToManyFileDescriptor"
+                         class="com.haulmont.contractsystem.entity.EntityManyFd"
                          view="entityWithManyToManyFileDescriptor-view">
             <query>
                 <![CDATA[select e from contractsystem$EntityWithManyToManyFileDescriptor e]]>

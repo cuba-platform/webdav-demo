@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<studio>
+    <dbScripts>
+        <excludes>
+            <postgres>
+                <item name="180122-2-createContractsystemEntityWithManyToManyFileDescriptorFileDescriptorLink01.sql">
+                    <![CDATA[alter table CONTRACTSYSTEM_ENTITY_WITH_MANY_TO_MANY_FILE_DESCRIPTOR_FILE_DESCRIPTOR_LINK add constraint FK_ENTWITM_ENTITY_WITH_MANY_TO_MANY_FILE_DESCRIPTOR foreign key (ENTITY_WITH_MANY_TO_MANY_FILE_DESCRIPTOR_ID) references CONTRACTSYSTEM_ENTITY_WITH_MANY_TO_MANY_FILE_DESCRIPTOR(ID);
+alter table CONTRACTSYSTEM_ENTITY_WITH_MANY_TO_MANY_FILE_DESCRIPTOR_FILE_DESCRIPTOR_LINK add constraint FK_ENTWITMANTOMANFILDESFILDES_FILE_DESCRIPTOR foreign key (FILE_DESCRIPTOR_ID) references SYS_FILE(ID);]]>
+                </item>
+                <item name="180122-1-createContractsystemEntityWithManyToManyFileDescriptorFileDescriptorLink01.sql">
+                    <![CDATA[create table CONTRACTSYSTEM_ENTITY_WITH_MANY_TO_MANY_FILE_DESCRIPTOR_FILE_DESCRIPTOR_LINK (
+    ENTITY_WITH_MANY_TO_MANY_FILE_DESCRIPTOR_ID uuid,
+    FILE_DESCRIPTOR_ID uuid,
+    primary key (ENTITY_WITH_MANY_TO_MANY_FILE_DESCRIPTOR_ID, FILE_DESCRIPTOR_ID)
+);]]>
+                </item>
+                <item name="180122-0-dropEntityWithManyToManyFileDescriptorFileDe01_DropScript.sql">
+                    <![CDATA[drop table if exists contractsystem_entity_with_many_to_many_file_descriptor_file_de__UNUSED cascade ;]]>
+                </item>
+                <item name="180122-0-dropEntityWithManyToManyFileDescriptorFileDe01.sql">
+                    <![CDATA[alter table contractsystem_entity_with_many_to_many_file_descriptor_file_de rename to contractsystem_entity_with_many_to_many_file_descriptor_file_de__UNUSED ;]]>
+                </item>
+            </postgres>
+        </excludes>
+    </dbScripts>
+</studio>

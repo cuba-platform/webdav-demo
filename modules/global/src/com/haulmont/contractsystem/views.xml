@@ -136,16 +136,14 @@
         <property name="file"
                   view="_minimal"/>
     </view>
-    <view class="com.haulmont.contractsystem.entity.EntityWithManyToManyFileDescriptor"
+    <view class="com.haulmont.contractsystem.entity.EntityManyFd"
           extends="_local"
           name="entityWithManyToManyFileDescriptor-view">
-        <property name="fileDescriptors"
-                  view="_minimal"/>
     </view>
-    <view class="com.haulmont.contractsystem.entity.EntityWithManyToManyFileDescriptor"
+    <view class="com.haulmont.contractsystem.entity.EntityManyFd"
           extends="_local"
           name="entityWithManyToManyFileDescriptor-view_1">
-        <property name="fileDescriptors"
+        <property name="fds"
                   view="_minimal"/>
     </view>
 </views>
