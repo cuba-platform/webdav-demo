@@ -4,7 +4,7 @@ import com.haulmont.contractsystem.entity.Contract;
 import com.haulmont.cuba.gui.components.AbstractLookup;
 import com.haulmont.cuba.gui.components.Component;
 import com.haulmont.cuba.gui.xml.layout.ComponentsFactory;
-import com.haulmont.webdav.webdav.component.WebWebdavDocumentLink;
+import com.haulmont.webdav.components.WebdavDocumentLink;
 
 import javax.inject.Inject;
 
@@ -14,7 +14,7 @@ public class ContractBrowse extends AbstractLookup {
     protected ComponentsFactory componentsFactory;
 
     public Component generateLinkCell(Contract entity) {
-        return componentsFactory.createComponent(WebWebdavDocumentLink.class)
+        return componentsFactory.createComponent(WebdavDocumentLink.class)
                 .withFileDescriptor(entity.getDocument());
     }
 }

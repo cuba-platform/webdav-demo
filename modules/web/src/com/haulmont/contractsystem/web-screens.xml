@@ -45,4 +45,6 @@
             template="com/haulmont/contractsystem/web/entitywithmanytomanyfiledescriptor/entity-with-many-to-many-file-descriptor-browse.xml"/>
     <screen id="contractsystem$EntityWithManyToManyFileDescriptor.edit"
             template="com/haulmont/contractsystem/web/entitywithmanytomanyfiledescriptor/entity-with-many-to-many-file-descriptor-edit.xml"/>
+    <screen id="webdav$WebdavShowDocumentVersion2.edit"
+            template="com/haulmont/contractsystem/web/screens/ext-webdav-document-version-edit.xml"/>
 </screen-config>

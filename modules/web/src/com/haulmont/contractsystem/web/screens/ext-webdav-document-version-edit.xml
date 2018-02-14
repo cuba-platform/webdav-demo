@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        dataSupplier="com.haulmont.contractsystem.data.RejectDataSupplier"
+        extends="com/haulmont/webdav/web/screens/documentversion/webdav-show-document-version-edit.xml">
+    <layout/>
+</window>
