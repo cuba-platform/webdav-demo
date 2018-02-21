@@ -10,8 +10,8 @@ create table CONTRACTSYSTEM_CONTRACT (
     DELETED_BY varchar(50),
     --
     NAME varchar(255) not null,
-    CONTRACTOR_ID varchar(36),
     DOCUMENT_ID varchar(36) not null,
+    CONTRACTOR_ID varchar(36),
     --
     primary key (ID)
 )^
@@ -33,11 +33,6 @@ create table CONTRACTSYSTEM_CONTRACTOR (
     primary key (ID)
 )^
 -- end CONTRACTSYSTEM_CONTRACTOR
-
--- begin SEC_USER
-alter table SEC_USER add column DTYPE varchar(100) ^
-update SEC_USER set DTYPE = 'contractsystem$ContractUser' where DTYPE is null ^
--- end SEC_USER
 -- begin CONTRACTSYSTEM_WEBDAV_CONTRACT
 create table CONTRACTSYSTEM_WEBDAV_CONTRACT (
     ID varchar(36) not null,
@@ -90,7 +85,6 @@ create table CONTRACTSYSTEM_CONTRACT_WITH_SIMPLE_FILE_DESCRIPTOR (
     primary key (ID)
 )^
 -- end CONTRACTSYSTEM_CONTRACT_WITH_SIMPLE_FILE_DESCRIPTOR
-
 -- begin CONTRACTSYSTEM_ENTITY_MANY_FD
 create table CONTRACTSYSTEM_ENTITY_MANY_FD (
     ID varchar(36) not null,
@@ -114,3 +108,7 @@ create table CONTRACTSYSTEM_MANY (
     primary key (ENTITY_MANY_ID, FILE_DESCRIPTOR_ID)
 )^
 -- end CONTRACTSYSTEM_MANY
+-- begin SEC_USER
+alter table SEC_USER add column DTYPE varchar(100) ^
+update SEC_USER set DTYPE = 'contractsystem$ContractUser' where DTYPE is null ^
+-- end SEC_USER

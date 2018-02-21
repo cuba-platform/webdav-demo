@@ -15,4 +15,12 @@ public class ContractUser extends User {
 
     @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
     protected WebdavCredentials webdavCredentials;
+
+    public WebdavCredentials getWebdavCredentials() {
+        return webdavCredentials;
+    }
+
+    public void setWebdavCredentials(WebdavCredentials webdavCredentials) {
+        this.webdavCredentials = webdavCredentials;
+    }
 }
