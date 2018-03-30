@@ -8,14 +8,11 @@
     <dsContext>
         <datasource id="contractorDs"
                     class="com.haulmont.contractsystem.entity.Contractor"
-                    view="contractor-view">
-            <collectionDatasource id="contractsDs"
-                                  property="contracts"/>
-        </datasource>
+                    view="_local"/>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="contractsBox"
+    <layout expand="windowActions"
             spacing="true">
         <fieldGroup id="fieldGroup"
                     datasource="contractorDs">
@@ -24,30 +21,6 @@
                 <field property="email"/>
             </column>
         </fieldGroup>
-        <groupBox id="contractsBox"
-                  caption="Contracts"
-                  spacing="true">
-            <table id="contractsTable"
-                   height="100%"
-                   width="100%">
-                <actions>
-                    <action id="create"/>
-                    <action id="edit"/>
-                    <action id="remove"/>
-                </actions>
-                <columns>
-                    <column id="name"/>
-                    <column id="document"
-                            generator="generateDocumentCell"/>
-                </columns>
-                <rows datasource="contractsDs"/>
-                <buttonsPanel>
-                    <button action="contractsTable.create"/>
-                    <button action="contractsTable.edit"/>
-                    <button action="contractsTable.remove"/>
-                </buttonsPanel>
-            </table>
-        </groupBox>
         <frame id="windowActions"
                screen="editWindowActions"/>
     </layout>
