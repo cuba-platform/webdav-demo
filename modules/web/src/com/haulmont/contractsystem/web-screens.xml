@@ -35,4 +35,8 @@
             template="com/haulmont/contractsystem/web/contractfdwithdisabledwebdav/contract-fd-with-disabled-webdav-browse.xml"/>
     <screen id="contractsystem$ContractFDWithDisabledWebdav.edit"
             template="com/haulmont/contractsystem/web/contractfdwithdisabledwebdav/contract-fd-with-disabled-webdav-edit.xml"/>
+    <screen id="contractsystem$ContractFDWithEnabledWebdavDisabledVersioning.browse"
+            template="com/haulmont/contractsystem/web/contractfdwithenabledwebdavdisabledversioning/contract-fd-with-enabled-webdav-disabled-versioning-browse.xml"/>
+    <screen id="contractsystem$ContractFDWithEnabledWebdavDisabledVersioning.edit"
+            template="com/haulmont/contractsystem/web/contractfdwithenabledwebdavdisabledversioning/contract-fd-with-enabled-webdav-disabled-versioning-edit.xml"/>
 </screen-config>

@@ -162,4 +162,12 @@
         <property name="document"
                   view="_minimal"/>
     </view>
+    <view class="com.haulmont.contractsystem.entity.ContractFDWithEnabledWebdavDisabledVersioning"
+          extends="_local"
+          name="contractFDWithEnabledWebdavDisabledVersioning-default-view">
+        <property name="contractor"
+                  view="_minimal"/>
+        <property name="document"
+                  view="_minimal"/>
+    </view>
 </views>
