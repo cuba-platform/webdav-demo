@@ -19,10 +19,6 @@
             template="com/haulmont/contractsystem/web/webdavdocumentversion/webdav-document-version-edit.xml"/>
     <screen id="contractsystem$Contract.edit"
             template="com/haulmont/contractsystem/web/contract/contract-edit.xml"/>
-    <screen id="contractsystem$SecurityDemo"
-            template="com/haulmont/contractsystem/web/demo/security-demo.xml"/>
-    <screen id="look-demo"
-            template="com/haulmont/contractsystem/web/demo/look-demo.xml"/>
     <screen id="webdavupload-field-not-in-field-group"
             template="com/haulmont/contractsystem/web/demo/webdavupload-field-not-in-field-group.xml"/>
     <screen id="contractsystem$WebdavContract.browse"
@@ -39,10 +35,6 @@
             template="com/haulmont/contractsystem/web/contractwithsimplefiledescriptor/contract-with-simple-file-descriptor-edit.xml"/>
     <screen id="simple-upload-field-not-in-group.xml"
             template="com/haulmont/contractsystem/web/demo/simple-upload-field-not-in-group.xml"/>
-    <screen id="contractsystem$EntityWithManyToManyFileDescriptor.browse"
-            template="com/haulmont/contractsystem/web/entitywithmanytomanyfiledescriptor/entity-with-many-to-many-file-descriptor-browse.xml"/>
-    <screen id="contractsystem$EntityWithManyToManyFileDescriptor.edit"
-            template="com/haulmont/contractsystem/web/entitywithmanytomanyfiledescriptor/entity-with-many-to-many-file-descriptor-edit.xml"/>
     <screen id="webdav$WebdavShowDocumentVersion2.edit"
             template="com/haulmont/contractsystem/web/screens/ext-webdav-document-version-edit.xml"/>
     <screen id="contractsystem$Contractor.edit"

@@ -11,10 +11,7 @@
         <item screen="simple-upload-field-not-in-group.xml"/>
         <item screen="webdavupload-field-not-in-field-group"/>
         <separator/>
-        <item screen="look-demo"/>
         <item screen="contractsystem$Contractor.browse"/>
-        <item screen="contractsystem$SecurityDemo"/>
-        <item screen="contractsystem$EntityWithManyToManyFileDescriptor.browse"/>
     </menu>
     <menu id="application-contractsystem-system"
           insertBefore="administration">
