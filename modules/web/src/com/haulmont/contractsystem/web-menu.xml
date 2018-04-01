@@ -2,6 +2,9 @@
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
     <menu id="application-contractsystem"
           insertBefore="administration">
+        <item screen="contractsystem$ContractFDWithDisabledWebdav.browse"/>
+        <item screen="contractsystem$ContractFDWithDefaultBehaviour.browse"/>
+        <separator/>
         <item screen="contractsystem$Contract.browse"/>
         <item screen="contractsystem$ContractWithSimpleFileDescriptor.browse"/>
         <item screen="contractsystem$ContractWithDisabledWebdav.browse"/>

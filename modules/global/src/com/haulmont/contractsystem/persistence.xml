@@ -10,5 +10,12 @@
         <class>com.haulmont.contractsystem.entity.ContractWithDisabledWebdav</class>
         <class>com.haulmont.contractsystem.entity.ContractWithSimpleFileDescriptor</class>
         <class>com.haulmont.contractsystem.entity.EntityManyFd</class>
+        <class>com.haulmont.contractsystem.entity.ContractFDWithEnabledWebdavEnabledVersioning</class>
+        <class>com.haulmont.contractsystem.entity.ContractFDWithDisabledWebdav</class>
+        <class>com.haulmont.contractsystem.entity.ContractFDWithDefaultBehaviour</class>
+        <class>com.haulmont.contractsystem.entity.ContractFDWithEnabledWebdavDisabledVersioning</class>
+        <class>com.haulmont.contractsystem.entity.ContractWDWithEnabledVersioning</class>
+        <class>com.haulmont.contractsystem.entity.ContractWDWithDisabledVersioning</class>
+        <class>com.haulmont.contractsystem.entity.ContractWDWithDefaultBehaviour</class>
     </persistence-unit>
 </persistence>

@@ -146,4 +146,20 @@
         <property name="fds"
                   view="_minimal"/>
     </view>
+    <view class="com.haulmont.contractsystem.entity.ContractFDWithDefaultBehaviour"
+          extends="_local"
+          name="contractFDWithDefaultBehaviour-default-view">
+        <property name="contractor"
+                  view="_minimal"/>
+        <property name="document"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.contractsystem.entity.ContractFDWithDisabledWebdav"
+          extends="_local"
+          name="contractFDWithDisabledWebdav-default-view">
+        <property name="contractor"
+                  view="_minimal"/>
+        <property name="document"
+                  view="_minimal"/>
+    </view>
 </views>

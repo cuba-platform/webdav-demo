@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.haulmont.contractsystem.web.contractfdwithdisabledwebdav.ContractFDWithDisabledWebdavBrowse"
+        focusComponent="contractFDWithDisabledWebdavsTable"
+        lookupComponent="contractFDWithDisabledWebdavsTable"
+        messagesPack="com.haulmont.contractsystem.web.contractfdwithdisabledwebdav">
+    <dsContext>
+        <groupDatasource id="contractFDWithDisabledWebdavsDs"
+                         class="com.haulmont.contractsystem.entity.ContractFDWithDisabledWebdav"
+                         view="contractFDWithDisabledWebdav-default-view">
+            <query>
+                <![CDATA[select e from contractsystem$ContractFDWithDisabledWebdav e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="contractFDWithDisabledWebdavsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="contractFDWithDisabledWebdavsTable"
+                datasource="contractFDWithDisabledWebdavsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="contractFDWithDisabledWebdavsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="number"/>
+                <column id="contractor"/>
+                <column id="link"
+                        caption="msg://contractFDWithDisabledWebdavsTable.link"
+                        generator="generateLinkCell"/>
+            </columns>
+            <rows datasource="contractFDWithDisabledWebdavsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="contractFDWithDisabledWebdavsTable.create"/>
+                <button id="editBtn"
+                        action="contractFDWithDisabledWebdavsTable.edit"/>
+                <button id="removeBtn"
+                        action="contractFDWithDisabledWebdavsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

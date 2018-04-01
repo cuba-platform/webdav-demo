@@ -27,4 +27,12 @@
             template="com/haulmont/contractsystem/web/screens/ext-webdav-document-version-edit.xml"/>
     <screen id="contractsystem$Contractor.edit"
             template="com/haulmont/contractsystem/web/contractor/contractor-edit.xml"/>
+    <screen id="contractsystem$ContractFDWithDefaultBehaviour.browse"
+            template="com/haulmont/contractsystem/web/contractfdwithdefaultbehaviour/contract-fd-with-default-behaviour-browse.xml"/>
+    <screen id="contractsystem$ContractFDWithDefaultBehaviour.edit"
+            template="com/haulmont/contractsystem/web/contractfdwithdefaultbehaviour/contract-fd-with-default-behaviour-edit.xml"/>
+    <screen id="contractsystem$ContractFDWithDisabledWebdav.browse"
+            template="com/haulmont/contractsystem/web/contractfdwithdisabledwebdav/contract-fd-with-disabled-webdav-browse.xml"/>
+    <screen id="contractsystem$ContractFDWithDisabledWebdav.edit"
+            template="com/haulmont/contractsystem/web/contractfdwithdisabledwebdav/contract-fd-with-disabled-webdav-edit.xml"/>
 </screen-config>
