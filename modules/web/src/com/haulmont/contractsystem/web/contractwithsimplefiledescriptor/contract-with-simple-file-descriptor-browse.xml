@@ -33,7 +33,9 @@
             <columns>
                 <column id="name"/>
                 <column id="file"/>
-                <column id="link" generator="linkGenerator"/>
+                <column id="link"
+                        caption="msg://contractWithSimpleFileDescriptorsTable.link"
+                        generator="linkGenerator"/>
             </columns>
             <rows datasource="contractWithSimpleFileDescriptorsDs"/>
             <rowsCount/>
