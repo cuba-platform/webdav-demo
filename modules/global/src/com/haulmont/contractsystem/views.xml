@@ -170,4 +170,36 @@
         <property name="document"
                   view="_minimal"/>
     </view>
+    <view class="com.haulmont.contractsystem.entity.ContractFDWithEnabledWebdavEnabledVersioning"
+          extends="_local"
+          name="contractFDWithEnabledWebdavEnabledVersioning-default-view">
+        <property name="contractor"
+                  view="_minimal"/>
+        <property name="document"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.contractsystem.entity.ContractWDWithDefaultBehaviour"
+          extends="_local"
+          name="contractWDWithDefaultBehaviour-default-view">
+        <property name="contractor"
+                  view="_minimal"/>
+        <property name="document"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.contractsystem.entity.ContractWDWithDisabledVersioning"
+          extends="_local"
+          name="contractWDWithDisabledVersioning-default-view">
+        <property name="contractor"
+                  view="_minimal"/>
+        <property name="document"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.contractsystem.entity.ContractWDWithEnabledVersioning"
+          extends="_local"
+          name="contractWDWithEnabledVersioning-default-view">
+        <property name="contractor"
+                  view="_minimal"/>
+        <property name="document"
+                  view="_minimal"/>
+    </view>
 </views>

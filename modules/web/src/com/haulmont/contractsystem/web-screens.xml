@@ -39,4 +39,20 @@
             template="com/haulmont/contractsystem/web/contractfdwithenabledwebdavdisabledversioning/contract-fd-with-enabled-webdav-disabled-versioning-browse.xml"/>
     <screen id="contractsystem$ContractFDWithEnabledWebdavDisabledVersioning.edit"
             template="com/haulmont/contractsystem/web/contractfdwithenabledwebdavdisabledversioning/contract-fd-with-enabled-webdav-disabled-versioning-edit.xml"/>
+    <screen id="contractsystem$ContractFDWithEnabledWebdavEnabledVersioning.browse"
+            template="com/haulmont/contractsystem/web/contractfdwithenabledwebdavenabledversioning/contract-fd-with-enabled-webdav-enabled-versioning-browse.xml"/>
+    <screen id="contractsystem$ContractFDWithEnabledWebdavEnabledVersioning.edit"
+            template="com/haulmont/contractsystem/web/contractfdwithenabledwebdavenabledversioning/contract-fd-with-enabled-webdav-enabled-versioning-edit.xml"/>
+    <screen id="contractsystem$ContractWDWithDefaultBehaviour.browse"
+            template="com/haulmont/contractsystem/web/contractwdwithdefaultbehaviour/contract-wd-with-default-behaviour-browse.xml"/>
+    <screen id="contractsystem$ContractWDWithDefaultBehaviour.edit"
+            template="com/haulmont/contractsystem/web/contractwdwithdefaultbehaviour/contract-wd-with-default-behaviour-edit.xml"/>
+    <screen id="contractsystem$ContractWDWithDisabledVersioning.browse"
+            template="com/haulmont/contractsystem/web/contractwdwithdisabledversioning/contract-wd-with-disabled-versioning-browse.xml"/>
+    <screen id="contractsystem$ContractWDWithDisabledVersioning.edit"
+            template="com/haulmont/contractsystem/web/contractwdwithdisabledversioning/contract-wd-with-disabled-versioning-edit.xml"/>
+    <screen id="contractsystem$ContractWDWithEnabledVersioning.browse"
+            template="com/haulmont/contractsystem/web/contractwdwithenabledversioning/contract-wd-with-enabled-versioning-browse.xml"/>
+    <screen id="contractsystem$ContractWDWithEnabledVersioning.edit"
+            template="com/haulmont/contractsystem/web/contractwdwithenabledversioning/contract-wd-with-enabled-versioning-edit.xml"/>
 </screen-config>

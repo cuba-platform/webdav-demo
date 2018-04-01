@@ -123,6 +123,10 @@ create table CONTRACTSYSTEM_CONTRACT_FD_WITH_ENABLED_WEBDAV_ENABLED_VERSIONING (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
+    NUMBER_ varchar(255) not null,
+    CONTRACTOR_ID varchar(36) not null,
+    DOCUMENT_ID varchar(36) not null,
+    --
     primary key (ID)
 )^
 -- end CONTRACTSYSTEM_CONTRACT_FD_WITH_ENABLED_WEBDAV_ENABLED_VERSIONING
@@ -191,6 +195,10 @@ create table CONTRACTSYSTEM_CONTRACT_WD_WITH_ENABLED_VERSIONING (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
+    NUMBER_ varchar(255) not null,
+    CONTRACTOR_ID varchar(36) not null,
+    DOCUMENT_ID varchar(36) not null,
+    --
     primary key (ID)
 )^
 -- end CONTRACTSYSTEM_CONTRACT_WD_WITH_ENABLED_VERSIONING
@@ -205,6 +213,10 @@ create table CONTRACTSYSTEM_CONTRACT_WD_WITH_DISABLED_VERSIONING (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
+    NUMBER_ varchar(255) not null,
+    CONTRACTOR_ID varchar(36) not null,
+    DOCUMENT_ID varchar(36) not null,
+    --
     primary key (ID)
 )^
 -- end CONTRACTSYSTEM_CONTRACT_WD_WITH_DISABLED_VERSIONING
@@ -218,6 +230,10 @@ create table CONTRACTSYSTEM_CONTRACT_WD_WITH_DEFAULT_BEHAVIOUR (
     UPDATED_BY varchar(50),
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
+    --
+    NUMBER_ varchar(255) not null,
+    CONTRACTOR_ID varchar(36) not null,
+    DOCUMENT_ID varchar(36) not null,
     --
     primary key (ID)
 )^

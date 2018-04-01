@@ -2,9 +2,14 @@
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
     <menu id="application-contractsystem"
           insertBefore="administration">
+        <item screen="contractsystem$ContractFDWithEnabledWebdavEnabledVersioning.browse"/>
         <item screen="contractsystem$ContractFDWithEnabledWebdavDisabledVersioning.browse"/>
         <item screen="contractsystem$ContractFDWithDisabledWebdav.browse"/>
         <item screen="contractsystem$ContractFDWithDefaultBehaviour.browse"/>
+        <separator/>
+        <item screen="contractsystem$ContractWDWithEnabledVersioning.browse"/>
+        <item screen="contractsystem$ContractWDWithDisabledVersioning.browse"/>
+        <item screen="contractsystem$ContractWDWithDefaultBehaviour.browse"/>
         <separator/>
         <item screen="contractsystem$Contract.browse"/>
         <item screen="contractsystem$ContractWithSimpleFileDescriptor.browse"/>
