@@ -27,17 +27,6 @@ public class Contractor extends StandardEntity {
 
 
 
-    @OneToMany(mappedBy = "contractor")
-    protected List<Contract> contracts;
-
-    public void setContracts(List<Contract> contracts) {
-        this.contracts = contracts;
-    }
-
-    public List<Contract> getContracts() {
-        return contracts;
-    }
-
 
     public void setName(String name) {
         this.name = name;

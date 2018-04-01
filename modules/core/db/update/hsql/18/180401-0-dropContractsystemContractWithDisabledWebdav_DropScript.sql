@@ -1,0 +1,1 @@
+drop table CONTRACTSYSTEM_CONTRACT_WITH_DISABLED_WEBDAV__UNUSED if exists cascade ;

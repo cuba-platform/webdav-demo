@@ -11,15 +11,6 @@
         <item screen="contractsystem$ContractWDWithDisabledVersioning.browse"/>
         <item screen="contractsystem$ContractWDWithDefaultBehaviour.browse"/>
         <separator/>
-        <item screen="contractsystem$Contract.browse"/>
-        <item screen="contractsystem$ContractWithSimpleFileDescriptor.browse"/>
-        <item screen="contractsystem$ContractWithDisabledWebdav.browse"/>
-        <separator/>
-        <item screen="contractsystem$WebdavContract.browse"/>
-        <separator/>
-        <item screen="simple-upload-field-not-in-group.xml"/>
-        <item screen="webdavupload-field-not-in-field-group"/>
-        <separator/>
         <item screen="contractsystem$Contractor.browse"/>
     </menu>
     <menu id="application-contractsystem-system"

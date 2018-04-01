@@ -3,13 +3,8 @@
              version="2.0">
     <persistence-unit name="ContractSystem"
                       transaction-type="RESOURCE_LOCAL">
-        <class>com.haulmont.contractsystem.entity.Contract</class>
         <class>com.haulmont.contractsystem.entity.Contractor</class>
         <class>com.haulmont.contractsystem.entity.ContractUser</class>
-        <class>com.haulmont.contractsystem.entity.WebdavContract</class>
-        <class>com.haulmont.contractsystem.entity.ContractWithDisabledWebdav</class>
-        <class>com.haulmont.contractsystem.entity.ContractWithSimpleFileDescriptor</class>
-        <class>com.haulmont.contractsystem.entity.EntityManyFd</class>
         <class>com.haulmont.contractsystem.entity.ContractFDWithEnabledWebdavEnabledVersioning</class>
         <class>com.haulmont.contractsystem.entity.ContractFDWithDisabledWebdav</class>
         <class>com.haulmont.contractsystem.entity.ContractFDWithDefaultBehaviour</class>
