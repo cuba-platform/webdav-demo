@@ -11,7 +11,6 @@
         <item screen="contractsystem$ContractWDWithDisabledVersioning.browse"/>
         <item screen="contractsystem$ContractWDWithDefaultBehaviour.browse"/>
         <separator/>
-        <item screen="contractsystem$Contractor.browse"/>
     </menu>
     <menu id="application-contractsystem-system"
           insertBefore="administration">
