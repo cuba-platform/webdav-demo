@@ -32,9 +32,8 @@ public class ContractFDWithEnabledWebdavEnabledVersioning extends StandardEntity
     @JoinColumn(name = "CONTRACTOR_ID")
     protected ContractUser contractor;
 
-    @NotNull
     @WebdavSupport
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DOCUMENT_ID")
     protected FileDescriptor document;
 

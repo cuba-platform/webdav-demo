@@ -15,7 +15,7 @@ create table CONTRACTSYSTEM_CONTRACT_FD_WITH_ENABLED_WEBDAV_ENABLED_VERSIONING (
     --
     NUMBER_ varchar(255) not null,
     CONTRACTOR_ID varchar(36) not null,
-    DOCUMENT_ID varchar(36) not null,
+    DOCUMENT_ID varchar(36),
     --
     primary key (ID)
 )^
