@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.haulmont.demo.webdav.web.contractwdwithdefaultbehaviour.ContractWDWithDefaultBehaviourBrowse"
+        focusComponent="contractWDWithDefaultBehavioursTable"
+        lookupComponent="contractWDWithDefaultBehavioursTable"
+        messagesPack="com.haulmont.demo.webdav.web.contractwdwithdefaultbehaviour">
+    <dsContext>
+        <groupDatasource id="contractWDWithDefaultBehavioursDs"
+                         class="com.haulmont.demo.webdav.entity.ContractWDWithDefaultBehaviour"
+                         view="contractWDWithDefaultBehaviour-default-view">
+            <query>
+                <![CDATA[select e from webdavdemo$ContractWDWithDefaultBehaviour e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="contractWDWithDefaultBehavioursTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="contractWDWithDefaultBehavioursTable"
+                datasource="contractWDWithDefaultBehavioursDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="contractWDWithDefaultBehavioursTable"
+                    width="100%">
+            <actions>
+                <action id="create" openType="DIALOG"/>
+                <action id="edit" openType="DIALOG"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="number"/>
+                <column id="contractor"/>
+                <column id="link"
+                        caption="msg://contractWDWithDefaultBehavioursTable.link"
+                        generator="generateLinkCell"/>
+            </columns>
+            <rows datasource="contractWDWithDefaultBehavioursDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="contractWDWithDefaultBehavioursTable.create"/>
+                <button id="editBtn"
+                        action="contractWDWithDefaultBehavioursTable.edit"/>
+                <button id="removeBtn"
+                        action="contractWDWithDefaultBehavioursTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

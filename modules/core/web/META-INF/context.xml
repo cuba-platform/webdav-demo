@@ -7,17 +7,8 @@
               name="jdbc/CubaDS"
               password=""
               type="javax.sql.DataSource"
-              url="jdbc:hsqldb:hsql://localhost/contractsystem"
+              url="jdbc:hsqldb:hsql://localhost:9010/webdavdemo"
               username="sa"/>
     <!-- Switch off session serialization -->
     <Manager pathname=""/>
-    <!--<Resource driverClassName="org.postgresql.Driver"
-          maxIdle="2"
-          maxTotal="20"
-          maxWaitMillis="5000"
-          name="jdbc/CubaDS"
-          password="root"
-          type="javax.sql.DataSource"
-          url="jdbc:postgresql://localhost/contractsystem"
-          username="root"/>-->
 </Context>

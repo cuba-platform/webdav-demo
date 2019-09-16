@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.haulmont.demo.webdav.web.contractwdwithdisabledversioning.ContractWDWithDisabledVersioningBrowse"
+        focusComponent="contractWDWithDisabledVersioningsTable"
+        lookupComponent="contractWDWithDisabledVersioningsTable"
+        messagesPack="com.haulmont.demo.webdav.web.contractwdwithdisabledversioning">
+    <dsContext>
+        <groupDatasource id="contractWDWithDisabledVersioningsDs"
+                         class="com.haulmont.demo.webdav.entity.ContractWDWithDisabledVersioning"
+                         view="contractWDWithDisabledVersioning-default-view">
+            <query>
+                <![CDATA[select e from webdavdemo$ContractWDWithDisabledVersioning e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="contractWDWithDisabledVersioningsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="contractWDWithDisabledVersioningsTable"
+                datasource="contractWDWithDisabledVersioningsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="contractWDWithDisabledVersioningsTable"
+                    width="100%">
+            <actions>
+                <action id="create" openType="DIALOG"/>
+                <action id="edit" openType="DIALOG"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="number"/>
+                <column id="contractor"/>
+                <column id="link"
+                        caption="msg://contractWDWithDisabledVersioningsTable.link"
+                        generator="generateLinkCell"/>
+            </columns>
+            <rows datasource="contractWDWithDisabledVersioningsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="contractWDWithDisabledVersioningsTable.create"/>
+                <button id="editBtn"
+                        action="contractWDWithDisabledVersioningsTable.edit"/>
+                <button id="removeBtn"
+                        action="contractWDWithDisabledVersioningsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

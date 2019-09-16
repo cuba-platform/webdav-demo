@@ -18,13 +18,6 @@ buildscript {
             }
         }
 
-        maven {
-            url 'https://repo.cuba-platform.com/content/repositories/premium-snapshots'
-            credentials {
-                username(rootProject.hasProperty('premiumRepoUser') ? rootProject['premiumRepoUser'] : '')
-                password(rootProject.hasProperty('premiumRepoPass') ? rootProject['premiumRepoPass'] : '')
-            }
-        }
     }
     dependencies {
         classpath "com.haulmont.gradle:cuba-plugin:$cubaVersion"
@@ -45,7 +38,7 @@ apply(plugin: 'cuba')
 
 cuba {
     artifact {
-        group = 'com.haulmont.contractsystem'
+        group = 'com.haulmont.demo.webdav'
         version = '0.1'
         isSnapshot = true
     }
@@ -60,7 +53,7 @@ cuba {
 
 dependencies {
     appComponent("com.haulmont.cuba:cuba-global:$cubaVersion")
-    appComponent("com.haulmont.webdav:webdav-global:2.4-SNAPSHOT")
+    appComponent("com.haulmont.webdav:webdav-global:2.4.0")
 
 }
 
@@ -126,16 +119,16 @@ configure(coreModule) {
 
     task createDb(dependsOn: assembleDbScripts, description: 'Creates local database', type: CubaDbCreation) {
         dbms = 'hsql'
-        host = 'localhost'
-        dbName = 'contractsystem'
+        host = 'localhost:9010'
+        dbName = 'webdavdemo'
         dbUser = 'sa'
         dbPassword = ''
     }
 
     task updateDb(dependsOn: assembleDbScripts, description: 'Updates local database', type: CubaDbUpdate) {
         dbms = 'hsql'
-        host = 'localhost'
-        dbName = 'contractsystem'
+        host = 'localhost:9010'
+        dbName = 'webdavdemo'
         dbUser = 'sa'
         dbPassword = ''
     }
@@ -149,7 +142,7 @@ configure(guiModule) {
 
     task deployConf(type: Copy) {
         from file('src')
-        include "com/haulmont/contractsystem/**"
+        include "com/haulmont/demo/webdav/**"
         into "$cuba.tomcat.dir/conf/${modulePrefix}"
     }
 }
@@ -177,7 +170,7 @@ configure(webModule) {
 
     task deployConf(type: Copy) {
         from file('src')
-        include "com/haulmont/contractsystem/**"
+        include "com/haulmont/demo/webdav/**"
         into "$cuba.tomcat.dir/conf/${modulePrefix}"
     }
 

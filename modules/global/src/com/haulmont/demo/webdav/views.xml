@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.haulmont.demo.webdav.entity.ContractFDWithDefaultBehaviour"
+          extends="_local"
+          name="contractFDWithDefaultBehaviour-default-view">
+        <property name="contractor"
+                  view="_minimal"/>
+        <property name="document"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.demo.webdav.entity.ContractFDWithDisabledWebdav"
+          extends="_local"
+          name="contractFDWithDisabledWebdav-default-view">
+        <property name="contractor"
+                  view="_minimal"/>
+        <property name="document"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.demo.webdav.entity.ContractFDWithEnabledWebdavDisabledVersioning"
+          extends="_local"
+          name="contractFDWithEnabledWebdavDisabledVersioning-default-view">
+        <property name="contractor"
+                  view="_minimal"/>
+        <property name="document"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.demo.webdav.entity.ContractFDWithEnabledWebdavEnabledVersioning"
+          extends="_local"
+          name="contractFDWithEnabledWebdavEnabledVersioning-default-view">
+        <property name="contractor"
+                  view="_minimal"/>
+        <property name="document"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.demo.webdav.entity.ContractWDWithDefaultBehaviour"
+          extends="_local"
+          name="contractWDWithDefaultBehaviour-default-view">
+        <property name="contractor"
+                  view="_minimal"/>
+        <property name="document"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.demo.webdav.entity.ContractWDWithDisabledVersioning"
+          extends="_local"
+          name="contractWDWithDisabledVersioning-default-view">
+        <property name="contractor"
+                  view="_minimal"/>
+        <property name="document"
+                  view="_minimal"/>
+    </view>
+    <view class="com.haulmont.demo.webdav.entity.ContractWDWithEnabledVersioning"
+          extends="_local"
+          name="contractWDWithEnabledVersioning-default-view">
+        <property name="contractor"
+                  view="_minimal"/>
+        <property name="document"
+                  view="_minimal"/>
+    </view>
+</views>

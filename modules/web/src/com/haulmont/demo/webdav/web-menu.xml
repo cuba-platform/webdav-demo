@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-webdavdemo"
+          insertBefore="administration">
+        <item screen="webdavdemo$ContractFDWithEnabledWebdavEnabledVersioning.browse"/>
+        <item screen="webdavdemo$ContractFDWithEnabledWebdavDisabledVersioning.browse"/>
+        <item screen="webdavdemo$ContractFDWithDisabledWebdav.browse"/>
+        <item screen="webdavdemo$ContractFDWithDefaultBehaviour.browse"/>
+        <separator/>
+        <item screen="webdavdemo$ContractWDWithEnabledVersioning.browse"/>
+        <item screen="webdavdemo$ContractWDWithDisabledVersioning.browse"/>
+        <item screen="webdavdemo$ContractWDWithDefaultBehaviour.browse"/>
+        <separator/>
+    </menu>
+    <menu id="application-webdavdemo-system"
+          insertBefore="administration">
+    </menu>
+</menu-config>

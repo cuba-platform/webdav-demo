@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.haulmont.demo.webdav.web.contractfdwithdefaultbehaviour.ContractFDWithDefaultBehaviourBrowse"
+        focusComponent="contractFDWithDefaultBehavioursTable"
+        lookupComponent="contractFDWithDefaultBehavioursTable"
+        messagesPack="com.haulmont.demo.webdav.web.contractfdwithdefaultbehaviour">
+    <dsContext>
+        <groupDatasource id="contractFDWithDefaultBehavioursDs"
+                         class="com.haulmont.demo.webdav.entity.ContractFDWithDefaultBehaviour"
+                         view="contractFDWithDefaultBehaviour-default-view">
+            <query>
+                <![CDATA[select e from webdavdemo$ContractFDWithDefaultBehaviour e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="contractFDWithDefaultBehavioursTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="contractFDWithDefaultBehavioursTable"
+                datasource="contractFDWithDefaultBehavioursDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="contractFDWithDefaultBehavioursTable"
+                    width="100%">
+            <actions>
+                <action id="create"
+                        openType="DIALOG"/>
+                <action id="edit"
+                        openType="DIALOG"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="number"/>
+                <column id="contractor"/>
+                <column id="link"
+                        caption="msg://contractFDWithDefaultBehavioursTable.link"
+                        generator="generateLinkCell"/>
+            </columns>
+            <rows datasource="contractFDWithDefaultBehavioursDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="contractFDWithDefaultBehavioursTable.create"/>
+                <button id="editBtn"
+                        action="contractFDWithDefaultBehavioursTable.edit"/>
+                <button id="removeBtn"
+                        action="contractFDWithDefaultBehavioursTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

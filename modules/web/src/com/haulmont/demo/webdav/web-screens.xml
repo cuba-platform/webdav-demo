@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="/com/haulmont/demo/webdav/screens.xml"/>
+    <screen id="webdavdemo$ContractFDWithDefaultBehaviour.browse"
+            template="/com/haulmont/demo/webdav/web/contractfdwithdefaultbehaviour/contract-fd-with-default-behaviour-browse.xml"/>
+    <screen id="webdavdemo$ContractFDWithDefaultBehaviour.edit"
+            template="/com/haulmont/demo/webdav/web/contractfdwithdefaultbehaviour/contract-fd-with-default-behaviour-edit.xml"/>
+    <screen id="webdavdemo$ContractFDWithDisabledWebdav.browse"
+            template="/com/haulmont/demo/webdav/web/contractfdwithdisabledwebdav/contract-fd-with-disabled-webdav-browse.xml"/>
+    <screen id="webdavdemo$ContractFDWithDisabledWebdav.edit"
+            template="/com/haulmont/demo/webdav/web/contractfdwithdisabledwebdav/contract-fd-with-disabled-webdav-edit.xml"/>
+    <screen id="webdavdemo$ContractFDWithEnabledWebdavDisabledVersioning.browse"
+            template="/com/haulmont/demo/webdav/web/contractfdwithenabledwebdavdisabledversioning/contract-fd-with-enabled-webdav-disabled-versioning-browse.xml"/>
+    <screen id="webdavdemo$ContractFDWithEnabledWebdavDisabledVersioning.edit"
+            template="/com/haulmont/demo/webdav/web/contractfdwithenabledwebdavdisabledversioning/contract-fd-with-enabled-webdav-disabled-versioning-edit.xml"/>
+    <screen id="webdavdemo$ContractFDWithEnabledWebdavEnabledVersioning.browse"
+            template="/com/haulmont/demo/webdav/web/contractfdwithenabledwebdavenabledversioning/contract-fd-with-enabled-webdav-enabled-versioning-browse.xml"/>
+    <screen id="webdavdemo$ContractFDWithEnabledWebdavEnabledVersioning.edit"
+            template="/com/haulmont/demo/webdav/web/contractfdwithenabledwebdavenabledversioning/contract-fd-with-enabled-webdav-enabled-versioning-edit.xml"/>
+    <screen id="webdavdemo$ContractWDWithDefaultBehaviour.browse"
+            template="/com/haulmont/demo/webdav/web/contractwdwithdefaultbehaviour/contract-wd-with-default-behaviour-browse.xml"/>
+    <screen id="webdavdemo$ContractWDWithDefaultBehaviour.edit"
+            template="/com/haulmont/demo/webdav/web/contractwdwithdefaultbehaviour/contract-wd-with-default-behaviour-edit.xml"/>
+    <screen id="webdavdemo$ContractWDWithDisabledVersioning.browse"
+            template="/com/haulmont/demo/webdav/web/contractwdwithdisabledversioning/contract-wd-with-disabled-versioning-browse.xml"/>
+    <screen id="webdavdemo$ContractWDWithDisabledVersioning.edit"
+            template="/com/haulmont/demo/webdav/web/contractwdwithdisabledversioning/contract-wd-with-disabled-versioning-edit.xml"/>
+    <screen id="webdavdemo$ContractWDWithEnabledVersioning.browse"
+            template="/com/haulmont/demo/webdav/web/contractwdwithenabledversioning/contract-wd-with-enabled-versioning-browse.xml"/>
+    <screen id="webdavdemo$ContractWDWithEnabledVersioning.edit"
+            template="/com/haulmont/demo/webdav/web/contractwdwithenabledversioning/contract-wd-with-enabled-versioning-edit.xml"/>
+</screen-config>

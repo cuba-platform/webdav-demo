@@ -6,7 +6,7 @@
     <!-- Application properties config files -->
     <context-param>
         <param-name>appPropertiesConfig</param-name>
-        <param-value>classpath:com/haulmont/contractsystem/web-app.properties
+        <param-value>classpath:com/haulmont/demo/webdav/web-app.properties
             /WEB-INF/local.app.properties
             "file:${catalina.base}/conf/app/local.app.properties"</param-value>
     </context-param>

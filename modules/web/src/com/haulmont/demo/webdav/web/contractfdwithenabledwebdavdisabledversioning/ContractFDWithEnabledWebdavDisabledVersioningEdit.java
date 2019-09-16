@@ -1,0 +1,7 @@
+package com.haulmont.demo.webdav.web.contractfdwithenabledwebdavdisabledversioning;
+
+import com.haulmont.cuba.gui.components.AbstractEditor;
+import com.haulmont.demo.webdav.entity.ContractFDWithEnabledWebdavDisabledVersioning;
+
+public class ContractFDWithEnabledWebdavDisabledVersioningEdit extends AbstractEditor<ContractFDWithEnabledWebdavDisabledVersioning> {
+}
