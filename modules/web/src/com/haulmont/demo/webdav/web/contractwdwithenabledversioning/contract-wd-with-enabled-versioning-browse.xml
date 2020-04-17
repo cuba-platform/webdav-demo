@@ -24,7 +24,7 @@
             <properties include=".*"/>
         </filter>
         <groupTable id="contractWDWithEnabledVersioningsTable"
-                    width="100%">
+                    width="100%" editable="true">
             <actions>
                 <action id="create" openType="DIALOG"/>
                 <action id="edit" openType="DIALOG"/>
@@ -33,6 +33,7 @@
             <columns>
                 <column id="number"/>
                 <column id="contractor"/>
+                <column id="document" editable="true"/>
                 <column id="link"
                         caption="msg://contractWDWithEnabledVersioningsTable.link"
                         generator="generateLinkCell"/>
